@@ -1,0 +1,264 @@
+<section id="logo-box">
+	<div class="brand">
+	  
+	  <svg class="coin__wrapper" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 82 209">
+	    <g fill="none" fill-rule="evenodd" stroke-opacity="0" transform="translate(10 80)">
+	      <g class="coin coin--fourth">
+	        <path class="coin__side" d="M30 49c12.1 0 22.26-1.75 25.17-4.1.77-.3 1.33-1.03 1.33-1.9v-7c0-1.1-.9-2-2-2h-49c-1.1 0-2 .9-2 2v7c0 .87.56 1.6 1.33 1.9C7.73 47.24 17.9 49 30 49z"/>
+	        <ellipse class="coin__face" cx="30" cy="35.5" rx="26" ry="5.5"/>
+	      </g>
+	      
+	      <g class="coin coin--third">
+	        <path class="coin__side" d="M27 38c12.1 0 22.26-1.75 25.17-4.1.77-.3 1.33-1.03 1.33-1.9v-7c0-1.1-.9-2-2-2h-49c-1.1 0-2 .9-2 2v7c0 .87.56 1.6 1.33 1.9C4.73 36.24 14.9 38 27 38z"/>
+	        <ellipse class="coin__face" cx="27" cy="24.5" rx="26" ry="5.5"/>
+	      </g>
+	      <g class="coin coin--second">
+	        <path class="coin__side" d="M35 31c12.1 0 22.26-1.75 25.17-4.1.77-.3 1.33-1.03 1.33-1.9v-7c0-1.1-.9-2-2-2h-49c-1.1 0-2 .9-2 2v7c0 .87.56 1.6 1.33 1.9C12.73 29.24 22.9 31 35 31z"/>
+	        <ellipse class="coin__face" cx="35" cy="17.5" rx="26" ry="5.5"/>
+	      </g>
+	      <g class="coin coin--first">
+	        <path class="coin__side" d="M27 19c12.1 0 22.26-1.75 25.17-4.1.77-.3 1.33-1.03 1.33-1.9V6c0-1.1-.9-2-2-2h-49c-1.1 0-2 .9-2 2v7c0 .87.56 1.6 1.33 1.9C4.73 17.24 14.9 19 27 19z"/>
+	        <ellipse class="coin__face" cx="27" cy="5.5" rx="26" ry="5.5"/>
+	      </g>
+	      <g transform="translate(-8 -8)">
+	        <path class="coin__spark" fill="#FFF" d="M55.98 4.5l.15.48c.5 1.66 1.92 2.97 3.73 3.44l.13.04c.36.1.6.48.5.84-.1.24-.3.43-.57.48l-.1.02c-1.78.38-3.2 1.63-3.67 3.27l-.2.68c-.1.36-.5.58-.9.48-.26-.06-.45-.24-.52-.47L54.3 13c-.5-1.6-1.9-2.8-3.64-3.2h-.1c-.4-.1-.64-.46-.55-.83.08-.24.28-.43.5-.5l.17-.04c1.77-.47 3.17-1.75 3.7-3.38l.2-.56c.1-.38.52-.58.9-.47.25.07.44.24.5.46z"/>
+	      <path class="coin__spark" fill="#FFF" d="M65.32.33c.3.92 1.06 1.64 2.06 1.9h.02c.22.06.35.28.3.48-.06.17-.18.27-.32.3-.98.2-1.76.9-2.03 1.8l-.03.1c-.07.24-.34.4-.6.3-.16-.02-.3-.14-.34-.3l-.05-.13c-.27-.88-1.04-1.56-2-1.77-.23-.05-.37-.26-.32-.47.07-.14.18-.25.3-.3h.04c.98-.25 1.75-.95 2.04-1.85l.02-.05c.07-.24.34-.37.6-.3.16.05.3.16.33.3z"/>
+	      </g>
+	    </g>
+	  </svg>
+	  <div class="brand-name__wrapper">
+	    <h1 class="brand-name"><strong>C</strong>rypto<strong>AH</strong></h1>
+	  </div>
+	</div>
+
+</section>
+
+<style>
+	#logo-box{
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: 200px;
+  height: 100px;
+  background: transparent;
+  cursor: pointer;
+  font-family: Lato;
+}
+
+h1 {
+	color: #FDBC6A;
+}
+
+.preview {
+  width: 70%;
+  border-radius: 8px;
+  -webkit-box-shadow: 0 1rem 4rem rgba(0, 0, 0, 0.4);
+          box-shadow: 0 1rem 4rem rgba(0, 0, 0, 0.4);
+  margin: auto;
+  margin-bottom: 8rem;
+  opacity: 0;
+}
+
+.subtitle {
+  color: white;
+  margin: auto;
+  margin-bottom: 2rem;
+  font-weight: 100;
+  opacity: 0;
+}
+
+.coin__wrapper {
+  position: relative;
+  z-index: 1;
+  width: 6rem;
+  -webkit-transform: translateX(5rem);
+          transform: translateX(5rem);
+}
+
+.coin__wrapper .coin {
+  opacity: 0;
+}
+
+.coin__wrapper .coin:nth-child(even) {
+  -webkit-transform-origin: 0px 19px;
+          transform-origin: 0px 19px;
+}
+
+.coin__wrapper .coin:nth-child(odd) {
+  -webkit-transform-origin: 52px 19px;
+          transform-origin: 52px 19px;
+}
+
+.coin__wrapper .coin__face {
+  fill: #FDDFB4;
+}
+
+.coin__wrapper .coin__side {
+  fill: #E69B4E;
+}
+
+.coin__wrapper .coin__spark {
+  opacity: 0;
+  -webkit-transform-origin: 54px 10px;
+          transform-origin: 54px 10px;
+}
+
+.brand {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin: auto;
+  /*-webkit-transform: translateY(200px);
+          transform: translateY(200px);*/
+}
+
+.brand-name {
+  padding: 0;
+  margin: 0 2rem;
+  margin-left: .5rem;
+  -webkit-transform: translateX(-110%);
+          transform: translateX(-110%);
+  opacity: 0;
+  letter-spacing: -1px;
+  color: #FDBC6A;
+  font-weight: 300;
+  font-size: 4em;
+}
+
+.brand-name__wrapper {
+  position: relative;
+  z-index: 0;
+  overflow: hidden;
+}
+
+.brand-name::-moz-selection,
+.brand-name strong::-moz-selection {
+  background: none;
+}
+
+.brand-name::selection,
+.brand-name strong::selection {
+  background: none;
+}
+
+.brand-name strong {
+  font-weight: 700;
+}
+
+.brand-name span {
+  display: inline-block;
+}
+
+</style>
+
+<script>
+var timeline = anime.timeline();
+
+var timescale = 1;
+var rotation = 25;
+var travel = 0;
+
+timeline.add({
+  targets: '.coin',
+  transformOrigin: function transformOrigin(e, i) {
+    return i % 2 !== 0 ? '0px 19px' : '0px 19px';
+  },
+  translateY: function translateY(e, i) {
+    return [0, 0];
+  },
+  rotateZ: {
+    value: function value(e, i) {
+      return [i > 0 ? i % 2 === 0 ? -rotation : rotation : 0, 0];
+    },
+    delay: function delay(e, i) {
+      return (500 + i * 100) * timescale;
+    },
+    duration: function duration(e, i) {
+      return 500 * timescale;
+    },
+    easing: 'easeOutElastic'
+  },
+  opacity: {
+    value: [0, 1],
+    delay: function delay(e, i) {
+      return (300 + i * 100) * timescale;
+    },
+    duration: 200 * timescale
+  },
+  duration: 500 * timescale,
+  easing: 'easeInExpo',
+  delay: function delay(e, i) {
+    return i * 100 * timescale;
+  }
+}).add({
+  targets: '.coin__wrapper',
+  translateX: ['5rem', 0],
+  easing: 'easeOutExpo'
+}).add({
+  targets: '.brand-name',
+  translateX: ['-110%', 0],
+  opacity: [0, 1],
+  easing: 'easeOutExpo',
+  offset: '-=1000'
+}).add({
+  targets: '.coin__spark',
+  scale: [.8, 1],
+  rotateZ: [-25, 0],
+  opacity: [0, 1],
+  delay: function delay(e, i) {
+    return i * 100 * timescale;
+  },
+  easing: 'easeOutExpo',
+  duration: 800 * timescale,
+  offset: '-=400'
+}).add({
+  targets: '.coin__spark',
+  scale: [1, 1.2],
+  opacity: [1, 0],
+  delay: function delay(e, i) {
+    return i * 100 * timescale;
+  },
+  easing: 'easeOutExpo',
+  duration: 200 * timescale,
+  offset: '-=500'
+})
+// HACK
+.add({
+  targets: '.coin__spark',
+  opacity: 0,
+  easing: 'easeOutExpo',
+  offset: '-=200',
+  duration: 1000 * timescale
+})
+
+// Move title
+.add({
+  targets: '.brand',
+  translateY: [0, 0],
+  easing: 'easeInOutQuad',
+  offset: '-=500'
+}).add({
+  targets: '.preview',
+  translateY: [70, 0],
+  opacity: [0, 1],
+  offset: '-=700',
+  easing: 'easeOutSine'
+}).add({
+  targets: '.subtitle',
+  opacity: [0, 1],
+  offset: '-=0',
+  easing: 'easeOutSine'
+});
+
+document.addEventListener('click', timeline.restart);
+</script>
