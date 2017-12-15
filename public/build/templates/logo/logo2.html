@@ -1,4 +1,4 @@
-<section id="logo-box">
+<div id="logo-box">
 	<div class="brand">
 	  
 	  <svg class="coin__wrapper" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 82 209">
@@ -30,8 +30,7 @@
 	    <h1 class="brand-name"><strong>C</strong>rypto<strong>AH</strong></h1>
 	  </div>
 	</div>
-
-</section>
+</div>
 
 <style>
 	#logo-box{
@@ -74,7 +73,7 @@ h1 {
 .coin__wrapper {
   position: relative;
   z-index: 1;
-  width: 6rem;
+  width: 65px;
   -webkit-transform: translateX(5rem);
           transform: translateX(5rem);
 }
@@ -118,21 +117,19 @@ h1 {
       -ms-flex-pack: center;
           justify-content: center;
   margin: auto;
-  /*-webkit-transform: translateY(200px);
-          transform: translateY(200px);*/
 }
 
 .brand-name {
-  padding: 0;
-  margin: 0 2rem;
-  margin-left: .5rem;
-  -webkit-transform: translateX(-110%);
-          transform: translateX(-110%);
-  opacity: 0;
-  letter-spacing: -1px;
-  color: #FDBC6A;
-  font-weight: 300;
-  font-size: 4em;
+	padding: 0;
+	margin: 0 2rem;
+	margin-left: .5rem;
+	-webkit-transform: translateX(-110%);
+	transform: translateX(-110%);
+	opacity: 0;
+	letter-spacing: -1px;
+	color: #FDBC6A;
+	font-weight: 300;
+	font-size: 31px;
 }
 
 .brand-name__wrapper {
@@ -260,5 +257,4 @@ timeline.add({
   easing: 'easeOutSine'
 });
 
-document.addEventListener('click', timeline.restart);
 </script>

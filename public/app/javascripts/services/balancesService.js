@@ -31,13 +31,11 @@ export default class BalanceService {
 			  }
 
 			  var getTokenBalance = function(){
-				  window.Cryptoah.deployed().then(function(contractInstance) {
-				    contractInstance.getBalance.call(window.myaccounts[0]).then(function(v) {
-				        window.balanceData.tokenBalance = v.toString();
-				        window.balanceData.tokenBalanceFinney = window.balanceData.tokenBalance / 1000000000000000000;
-						    resolve(); // end of promise
-				    });
-				  });
+			    contractInstance.getBalance.call(window.myaccounts[0]).then(function(v) {
+			        window.balanceData.tokenBalance = v.toString();
+			        window.balanceData.tokenBalanceFinney = window.balanceData.tokenBalance / 1000000000000000000;
+					    resolve(); // end of promise
+			    });
 			  }
 
 			  getBalance(window.myaccounts[0]).then(function(res){
