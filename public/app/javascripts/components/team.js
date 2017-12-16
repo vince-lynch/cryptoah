@@ -1,4 +1,4 @@
-const team = {
+var team = {
   templateUrl: 'templates/team/team.html',
   controller($scope, $http) {
 

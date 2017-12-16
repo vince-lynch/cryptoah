@@ -1,4 +1,4 @@
-const depositAddress = {
+var depositAddress = {
   templateUrl: 'templates/helpers/depositaddress.html',
   controller($scope, $http) {
 

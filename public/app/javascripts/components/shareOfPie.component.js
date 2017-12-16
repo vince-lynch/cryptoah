@@ -1,4 +1,4 @@
-const shareOfPie = {
+var shareOfPie = {
 	templateUrl: 'templates/charts/pie.html',
 	controller($scope, $http, $timeout) {
 
@@ -133,8 +133,8 @@ const shareOfPie = {
 							// finally get owners amount & display results in piechart
 							$scope.getTokenBalanceForAddress('0x2992d108628dc832e239a8e243712679c9443404', totalSupply)
 							.then(function(response){
-								let theirTokenBalance = new BigNumber(response.data.result).toFixed(2);
-								let percentageOfTotalSupply = (theirTokenBalance / totalSupply) * 100;
+								var theirTokenBalance = new BigNumber(response.data.result).toFixed(2);
+								var percentageOfTotalSupply = (theirTokenBalance / totalSupply) * 100;
 								$scope.livePortfolio.portfolioAssets.push({
 				          id: i + 1,
 				          name: 'unowned',

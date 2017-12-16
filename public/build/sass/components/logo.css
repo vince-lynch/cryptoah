@@ -1,0 +1,85 @@
+#logo-box {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  width: 200px;
+  height: 100px;
+  background: transparent;
+  cursor: pointer; }
+  #logo-box h1 {
+    color: #FDBC6A; }
+  #logo-box .preview {
+    width: 70%;
+    border-radius: 8px;
+    -webkit-box-shadow: 0 1rem 4rem rgba(0, 0, 0, 0.4);
+    box-shadow: 0 1rem 4rem rgba(0, 0, 0, 0.4);
+    margin: auto;
+    margin-bottom: 8rem;
+    opacity: 0; }
+  #logo-box .subtitle {
+    color: white;
+    margin: auto;
+    margin-bottom: 2rem;
+    font-weight: 100;
+    opacity: 0; }
+  #logo-box .coin__wrapper {
+    position: relative;
+    z-index: 1;
+    width: 65px;
+    -webkit-transform: translateX(5rem);
+    transform: translateX(5rem); }
+  #logo-box .coin__wrapper .coin {
+    opacity: 0; }
+  #logo-box .coin__wrapper .coin:nth-child(even) {
+    -webkit-transform-origin: 0px 19px;
+    transform-origin: 0px 19px; }
+  #logo-box .coin__wrapper .coin:nth-child(odd) {
+    -webkit-transform-origin: 52px 19px;
+    transform-origin: 52px 19px; }
+  #logo-box .coin__wrapper .coin__face {
+    fill: #FDDFB4; }
+  #logo-box .coin__wrapper .coin__side {
+    fill: #E69B4E; }
+  #logo-box .coin__wrapper .coin__spark {
+    opacity: 0;
+    -webkit-transform-origin: 54px 10px;
+    transform-origin: 54px 10px; }
+  #logo-box .brand {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    margin: auto; }
+  #logo-box .brand-name {
+    padding: 0;
+    margin: 0 2rem;
+    margin-left: .5rem;
+    -webkit-transform: translateX(-110%);
+    transform: translateX(-110%);
+    opacity: 0;
+    letter-spacing: -1px;
+    color: #FDBC6A;
+    font-weight: 300;
+    font-size: 31px; }
+  #logo-box .brand-name__wrapper {
+    position: relative;
+    z-index: 0;
+    overflow: hidden; }
+  #logo-box .brand-name::-moz-selection,
+  #logo-box .brand-name strong::-moz-selection {
+    background: none; }
+  #logo-box .brand-name::selection,
+  #logo-box .brand-name strong::selection {
+    background: none; }
+  #logo-box .brand-name strong {
+    font-weight: 700; }
+  #logo-box .brand-name span {
+    display: inline-block; }

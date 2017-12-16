@@ -1,4 +1,4 @@
-const landerHeader = {
+var landerHeader = {
   templateUrl: 'templates/homepage/header.html',
 controller($scope, $http) {
 

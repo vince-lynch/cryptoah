@@ -1,4 +1,4 @@
-const headerNav = {
+var headerNav = {
   template: `
   <header>
   <div class="container">

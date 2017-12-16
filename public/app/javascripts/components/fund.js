@@ -1,4 +1,4 @@
-const fund = {
+var fund = {
   templateUrl: 'templates/joinus/fund.html',
   controller($scope, $http) {
 

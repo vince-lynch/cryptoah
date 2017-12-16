@@ -1,4 +1,4 @@
-const footerNav = {
+var footerNav = {
   template: `
 <footer class="fdb-block footer-large">
     <div class="container">

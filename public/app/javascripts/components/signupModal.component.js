@@ -1,4 +1,4 @@
-const signupModal = {
+var signupModal = {
   templateUrl: 'templates/modals/signup-modal.html',
   controller($scope, $http) {
 

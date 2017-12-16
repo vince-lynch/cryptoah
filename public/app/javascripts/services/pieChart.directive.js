@@ -1,10 +1,6 @@
+var pieChart = function($timeout, highstock){
 
-export default class BasicService {
-  constructor($timeout, highstock) {
-    'ngInject';
-
-
-    var colors = ['#CD5955', '#E96D66', '#EC876C', '#EFA071', '#EFB278', '#EEC27D', '#DEC782', '#BCBB87', '#99AD8A', '#7B9D8A', '#5E8D8A'];
+ var colors = ['#CD5955', '#E96D66', '#EC876C', '#EFA071', '#EFB278', '#EEC27D', '#DEC782', '#BCBB87', '#99AD8A', '#7B9D8A', '#5E8D8A'];
     var chartConfig = {
         chart: {
             type: 'pie',
@@ -138,7 +134,11 @@ export default class BasicService {
                 createChart(scope.portfolio);
             })
         }
-    }
 
+    }
 }
-}
+
+export default pieChart;
+
+
+

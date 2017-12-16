@@ -1,10 +1,6 @@
-export default class BasicService {
-  constructor($http) {
-    'ngInject';
+var BasicService = function($http){
 
-    console.log('loaded BasicService');
-
-    this.fromService = 'result from service';
+	this.fromService = 'result from service';
 
     // find out who is a user from their address
     this.storeUserDetails = function(address){
@@ -41,7 +37,7 @@ export default class BasicService {
 	    return window.myaccounts;
 	}
 
-  }
-
 }
-//sessionStorage.setItem('key', 'value');
+
+export default BasicService;
+

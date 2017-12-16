@@ -16,8 +16,6 @@ window.contractAddress = '0x1d29035eacc4a8bf72a9d776aa9e546cdd7dd946';
 window.contractInstance = Cryptoah.at(window.contractAddress);
 
 
-
-
 // COMPONENTS
 import ourLogo from './components/ourlogo.js';
 import headerNav from './components/header.js';
@@ -40,13 +38,9 @@ import highStock from './services/highStock.factory';
 import pieChart from './services/pieChart.directive';
 
 
-//FACTORIES
-import injectCSS from './services/cssFactory';
-
 var app = angular.module("myApp", ['ngRoute', 'angularMoment', 'ngAnimate', 'ngOdometer']);
   app.service('BalanceService', BalanceService)
   app.service('BasicService', BasicService)
-  app.factory('injectCSS', injectCSS)
   app.factory('highstock', highStock)
   app.directive('pieChart', pieChart)
 

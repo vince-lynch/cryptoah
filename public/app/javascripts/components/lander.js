@@ -1,4 +1,4 @@
-const lander = {
+var lander = {
 	templateUrl: 'templates/homepage/homepage.html',
 	controller($scope, $http) {
 
