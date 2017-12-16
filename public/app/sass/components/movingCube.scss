@@ -1,0 +1,219 @@
+
+$face-size: 15rem;
+$half-face-size: $face-size / 2;
+$layers: 10;
+$duration: 12s;
+$rotation-duration: 3s;
+
+.movingCube {
+	perspective: 9000rem;
+  perspective-origin: center center;
+  transform-style: preserve-3d;
+  transform: rotateX(35deg);
+  transform-origin: center center;
+  height: 100%;
+  width: 100%;
+
+	.face {
+	  width: $face-size;
+	  height: $face-size;
+	  position: absolute;
+	  transform-style: preserve-3d;
+	  animation-fill-mode: forwards;
+	  opacity: 0;  
+	  
+	  &:before, &:after {
+	    content: '';
+	    display: block;
+	    position: absolute;
+	    top: calc(50% - 1px);
+	    left: calc(50% - 1px);
+	    background: transparent;
+	    width: 2px;
+	    height: 2px;
+	  }
+	  
+	  &:not(:last-child):after {
+	    transform: translateZ($face-size / ($layers * 2));
+	    
+	    @at-root .faces-top > & {
+	      transform: translateZ(-$face-size / ($layers * 2));
+	    }
+	  }
+	  
+	  &:nth-child(3n-2):before {
+	    $box-shadow: ();
+	    $divisions: ($layers - 1) * 2;
+	    $increment: ($face-size / $divisions);
+	    
+	    @for $x from 0 through $divisions {
+	      @for $y from 0 through 3 {
+	        $shadow:
+	          (-$half-face-size + $increment * $x)
+	          (-$half-face-size + $face-size / 3 * $y)
+	          #38B0E4;
+	        $box-shadow: append($box-shadow, $shadow, comma);
+	      }
+	    }
+	    
+	    @for $x from 0 through 3 {
+	      @for $y from 0 through $divisions {
+	        $shadow:
+	          (-$half-face-size + $face-size / 3 * $x)
+	          (-$half-face-size + $increment * $y)
+	          #38B0E4;
+	        $box-shadow: append($box-shadow, $shadow, comma);
+	      }
+	    }
+	    
+	    box-shadow: $box-shadow;
+	  }
+	  
+	  &:not(:nth-child(3n-2)):before, &:after {
+	    $box-shadow: ();
+	    $increment: $face-size/3;
+	    
+	    @for $x from 0 through 3 {
+	      @for $y from 0 through 3 {
+	        $shadow:
+	          (-$half-face-size + $increment * $x)
+	          (-$half-face-size + $increment * $y)
+	          #38B0E4;
+	        $box-shadow: append($box-shadow, $shadow, comma);
+	      }
+	    }
+	    
+	    box-shadow: $box-shadow;
+	  }
+	}
+
+	@mixin layers($direction, $number) {
+	  /* border: 2px solid #38B0E4; */
+	  
+	  $delays: (
+	    'top': 0s,
+	    'left': $duration / 3,
+	    'right': $duration * 2 / 3
+	  );
+	  
+	  $delay-offset-increment: $duration / 120;
+	  
+	  $axis: Y;
+	  $axis-rotation: 45deg;
+	  $z-rotation-start: 0deg;
+	  $z-rotation-end: 90deg;
+	  $transform-origin: top center;
+	  
+	  @if $direction == 'top' {
+	    $axis: X;
+	    $axis-rotation: 90deg;
+	    $z-rotation-start: 45deg;
+	    $z-rotation-end: -45deg;
+	    $transform-origin: center center;
+	  }
+	  
+	  @if $direction == 'right' {
+	    $axis-rotation: -45deg;
+	  }
+	  
+	  $axis-rotation: unquote('(#{$axis-rotation})');
+	  
+	  @for $i from 1 through $number {
+	    $half-face-size: $face-size / 2;
+	    $z-position: if($direction == 'top',
+	      $face-size - ($face-size / ($number - 1)) * ($i - 1),
+	      -$half-face-size + ($face-size / ($number - 1)) * ($i - 1));
+	    $y-position: if($direction == 'top', 0, -$half-face-size);
+	    
+	    &:nth-child(#{$i}) {
+	      /* animation-play-state: paused; */
+	      animation-name:
+	        rotate-#{$direction}-#{$i},
+	        visibility-#{$direction};
+	      animation-timing-function: ease-in-out;
+	      animation-duration:
+	        $duration,
+	        $duration;
+	      animation-iteration-count:
+	        infinite,
+	        infinite;
+	      animation-delay:
+	        map-get($delays, $direction) + $delay-offset-increment * ($i - 1),
+	        map-get($delays, $direction);
+	      transform-origin: #{$transform-origin};
+	      transform:
+	        rotate#{$axis}#{$axis-rotation}
+	        rotateZ(#{$z-rotation-start})
+	        translateZ(#{$z-position})
+	        translateY(#{$y-position});
+	    }
+	    
+	    @keyframes rotate-#{$direction}-#{$i} {
+	      0% {
+	        transform:
+	          rotate#{$axis}#{$axis-rotation}
+	          rotateZ(#{$z-rotation-start})
+	          translateZ(#{$z-position})
+	          translateY(#{$y-position});
+	      }
+	      #{percentage($rotation-duration/$duration)}, 100% {
+	        transform:
+	          rotate#{$axis}#{$axis-rotation}
+	          rotateZ(#{$z-rotation-end})
+	          translateZ(#{$z-position})
+	          translateY(#{$y-position});
+	      }
+	    }
+	  }
+
+	  @keyframes visibility-#{$direction} {
+	    0%, #{percentage(($rotation-duration + $delay-offset-increment * $number)/$duration)} {
+	      opacity: 1;
+	    }
+	    #{percentage(($rotation-duration + $delay-offset-increment * ($number+1))/$duration)}, 100% {
+	      opacity: 0;  
+	    }
+	  }
+	}
+
+	[class^="faces-"] {
+	  transform-style: preserve-3d;
+	  height: $face-size;
+	  width: $face-size;
+	  position: absolute;
+	  top: 0;
+	  left: 0;
+	}
+
+	.faces-top > .face {
+	  /* display: none; */
+	  @include layers(top, $layers);
+	}
+
+	.faces-left > .face {
+	  /* display: none; */
+	  @include layers(left, $layers);
+	}
+
+	.faces-right > .face {
+	  /* display: none; */
+	  @include layers(right, $layers);
+	}
+
+	.cube {
+	  position: absolute;
+	  height: $face-size;
+	  width: $face-size;
+	  top: 50%;
+	  left: 50%;
+	  transform: translateX(-50%) translateY(-50%);
+	  transform-style: preserve-3d;
+	}
+
+	*, *:before, *:after {
+	  box-sizing: border-box;
+	  position: relative;
+	}
+
+}
+

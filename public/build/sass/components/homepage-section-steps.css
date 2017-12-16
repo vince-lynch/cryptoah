@@ -1,0 +1,11 @@
+section#browser {
+  padding: 150px 0;
+  overflow: hidden;
+  background: #f3e5bd; }
+  section#browser .title {
+    font-family: inherit;
+    font-weight: 200;
+    line-height: 1.1;
+    display: inline-block;
+    color: #2e324a;
+    background: white; }

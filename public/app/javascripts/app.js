@@ -28,6 +28,7 @@ import landerWaves from './components/lander-waves.js';
 import shareOfPie from './components/shareOfPie.component';
 import depositAddress from './components/depositAddress.component';
 import signupModal from './components/signupModal.component';
+import movingCube from './components/movingCube';
 
 // SERVICES
 import BasicService from './services/basicService';
@@ -57,6 +58,7 @@ var app = angular.module("myApp", ['ngRoute', 'angularMoment', 'ngAnimate', 'ngO
   app.component('landerWaves', landerWaves)
   app.component('shareOfPie', shareOfPie)
   app.component('depositAddress', depositAddress)
+  app.component('movingCube', movingCube)
 
 
   app.config(function($routeProvider, $locationProvider) {

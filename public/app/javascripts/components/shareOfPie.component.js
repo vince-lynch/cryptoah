@@ -10,77 +10,11 @@ var shareOfPie = {
 
 		$scope.portfolio = {
       id: 123,
-      portfolioAssets: [{
-          id: 123,
-          name: 'Asset A',
-          symbol: 'AAA',
-          percentage: 10
-      }, {
-          id: 125,
-          name: 'Asset C',
-          symbol: 'CCC',
-          percentage: 15
-      }, {
-          id: 126,
-          name: 'Asset D',
-          symbol: 'DDD',
-          percentage: 10
-      }, {
-          id: 127,
-          name: 'Asset E',
-          symbol: 'BBB',
-          percentage: 50
-      }]
+      portfolioAssets: []
     };
 
+    $scope.pieShareLoaded = false;
 
-				// $scope.portfolio.portfolioAssets.push({
-    //       id: 123,
-    //       name: 'unowned',
-    //       symbol: ' CAH',
-    //       percentage: 25
-				// })
-
-				
-				// $scope.portfolio.portfolioAssets.push({
-    //       id: 127,
-    //       name: 'Asset E',
-    //       symbol: 'BBB',
-    //       percentage: 50
-    //   })
-
-
-				// $timeout(function() {
-				// 	console.log('3 seconds has passed');
-
-
-
-				// 	$scope.portfolio = {
-			 //      id: 123,
-			 //      portfolioAssets: [{
-			 //          id: 123,
-			 //          name: 'Asset A',
-			 //          symbol: 'AAA',
-			 //          percentage: 25
-			 //      }, {
-			 //          id: 125,
-			 //          name: 'Asset C',
-			 //          symbol: 'CCC',
-			 //          percentage: 25
-			 //      }, {
-			 //          id: 126,
-			 //          name: 'Asset D',
-			 //          symbol: 'DDD',
-			 //          percentage: 25
-			 //      }, {
-			 //          id: 127,
-			 //          name: 'Asset E',
-			 //          symbol: 'BBB',
-			 //          percentage: 25
-			 //      }]
-			 //    };
-
-				// }, 3000);
 
 		var getPercentageSold = function(totalSupply) {
 			contractInstance._totalSold.call(function(error, result){
@@ -146,6 +80,7 @@ var shareOfPie = {
 
 								//display results in piechart
 								$scope.portfolio = $scope.livePortfolio;
+								$scope.pieShareLoaded = true;
 							})
 
 						}

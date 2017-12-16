@@ -1,11 +1,6 @@
 
 @import "components/logo";
-
-
-body {
-	background: white;
-
-	h7{
-		color: blue;
-	}
-}
+@import "components/piechart";
+@import "components/homepage-hero";
+@import "components/homepage-section-steps";
+@import "components/movingCube.scss";
