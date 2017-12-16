@@ -63,7 +63,7 @@
 /******/ 	__webpack_require__.p = "";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 54);
+/******/ 	return __webpack_require__(__webpack_require__.s = 46);
 /******/ })
 /************************************************************************/
 /******/ ([
@@ -1753,7 +1753,7 @@
 
 var BigNumber = __webpack_require__(7);
 var sha3 = __webpack_require__(12);
-var utf8 = __webpack_require__(78);
+var utf8 = __webpack_require__(70);
 
 var unitMap = {
     'noether':      '0',    
@@ -6761,7 +6761,7 @@ module.exports = Property;
  * @date 2015
  */
 
-var CryptoJS = __webpack_require__(58);
+var CryptoJS = __webpack_require__(50);
 var sha3 = __webpack_require__(23);
 
 module.exports = function (value, options) {
@@ -8144,15 +8144,15 @@ module.exports = {
 
 var f = __webpack_require__(3);
 
-var SolidityTypeAddress = __webpack_require__(82);
-var SolidityTypeBool = __webpack_require__(83);
-var SolidityTypeInt = __webpack_require__(86);
-var SolidityTypeUInt = __webpack_require__(89);
-var SolidityTypeDynamicBytes = __webpack_require__(85);
-var SolidityTypeString = __webpack_require__(88);
-var SolidityTypeReal = __webpack_require__(87);
-var SolidityTypeUReal = __webpack_require__(90);
-var SolidityTypeBytes = __webpack_require__(84);
+var SolidityTypeAddress = __webpack_require__(74);
+var SolidityTypeBool = __webpack_require__(75);
+var SolidityTypeInt = __webpack_require__(78);
+var SolidityTypeUInt = __webpack_require__(81);
+var SolidityTypeDynamicBytes = __webpack_require__(77);
+var SolidityTypeString = __webpack_require__(80);
+var SolidityTypeReal = __webpack_require__(79);
+var SolidityTypeUReal = __webpack_require__(82);
+var SolidityTypeBytes = __webpack_require__(76);
 
 var isDynamic = function (solidityType, type) {
    return solidityType.isDynamicType(type) ||
@@ -10161,87 +10161,7 @@ const signupModal = {
 
 "use strict";
 const team = {
-  template: `
-<section class="fdb-block team-8">
-    <div class="container">
-      <div class="row text-center justify-content-center">
-        <div class="col-8">
-          <h1>Our Amazing Team</h1>
-          <p class="text-h3">A small river named Duden flows by their place and supplies it with the necessary regelialia. It is a paradisematic country, in which roasted parts of sentences fly into your mouth.</p>
-        </div>
-      </div>
-
-      <div class="row-100"></div>
-
-      <div class="row justify-content-center text-left">
-        <div class="col-sm-6">
-          <div class="row align-items-center">
-            <div class="col-4">
-              <img alt="image" class="img-fluid" src="./imgs/img_round.svg">
-            </div>
-
-            <div class="col-8">
-              <h3><strong>Employee Name</strong></h3>
-              <p class="text-h3">Position</p>
-
-              <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-sm-6">
-          <div class="row align-items-center">
-            <div class="col-4">
-              <img alt="image" class="img-fluid" src="./imgs/img_round.svg">
-            </div>
-
-            <div class="col-8">
-              <h3><strong>Employee Name</strong></h3>
-              <p class="text-h3">Position</p>
-
-              <p>Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean.</p>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="row-70"></div>
-
-      <div class="row justify-content-center text-left">
-        <div class="col-sm-6">
-          <div class="row align-items-center">
-            <div class="col-4">
-              <img alt="image" class="img-fluid" src="./imgs/img_round.svg">
-            </div>
-
-            <div class="col-8">
-              <h3><strong>Employee Name</strong></h3>
-              <p class="text-h3">Position</p>
-
-              <p>One day however a small line of blind text by the name of Lorem Ipsum decided to leave for the far World of Grammar.</p>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-sm-6">
-          <div class="row align-items-center">
-            <div class="col-4">
-              <img alt="image" class="img-fluid" src="./imgs/img_round.svg">
-            </div>
-
-            <div class="col-8">
-              <h3><strong>Employee Name</strong></h3>
-              <p class="text-h3">Position</p>
-
-              <p>Even the all-powerful Pointing has no control about the blind texts it is an almost unorthographic life.</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-  <footer-nav></footer-nav>
-  `,
+  templateUrl: 'templates/team/team.html',
   controller($scope, $http) {
 
 
@@ -10252,285 +10172,6 @@ const team = {
 
 /***/ }),
 /* 39 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-class assetsCtrl {
-
-    constructor($scope, $interval) {
-
-
-      $scope.checkAsset = function(_assetTkn){
-        // window.Cryptoah.deployed().then(function(contractInstance) {
-        //   contractInstance.checkHoldingAsset.call(_assetTkn).then(function(v) {
-        //     console.log('Holding ', v.toString(), "of " + _assetTkn);
-        //     $scope.$apply(function(){
-        //       return Number(v.toString())
-        //     })
-          
-        //   });
-        // });
-        return 0;
-      }
-
-		$scope.sellAsset = function(_assetTkn, _amount) {
-		  window.Cryptoah.deployed().then(function(contractInstance) {
-		    contractInstance.sellAsset(_assetTkn, _amount, {gas: 140000, from: web3.eth.accounts[0]}).then(function(v) {
-		      contractInstance.checkHoldingAsset.call(_assetTkn).then(function(v) {
-		        console.log('Now holding ', v, "of " + _assetTkn);
-		      });
-		    });
-		  });
-		}
-
-		$scope.buyAsset = function(_assetTkn, _amount) {
-		  window.Cryptoah.deployed().then(function(contractInstance) {
-		    contractInstance.holdAsset(_assetTkn, _amount, {gas: 140000, from: web3.eth.accounts[0]}).then(function(v) {
-		      contractInstance.checkHoldingAsset.call(_assetTkn).then(function(v) {
-		        console.log('Now holding ', v, "of " + _assetTkn);
-		      });
-		    });
-		  });
-		}
-
-
-      $scope.assetTransaction = [];
-
-      window.Cryptoah.deployed().then(function(contractInstance) {
-        var myEvent2 = contractInstance.AssetTransaction({"_assetTkn":"\"Amz\""}, {fromBlock: 0, toBlock: 'latest'});
-        myEvent2.watch(function(error, result){
-           console.log('AssetTransaction', result);
-           $scope.$apply(function(){
-             $scope.assetTransaction.push(result);
-           })
-        });
-      });
-
-      $scope.tokenStocks = [
-        {tokenName: 'AplTokenz', stock: 'Apple inc', tknSym: 'Apl'},
-        {tokenName: 'AmzTokenz', stock: 'Amazon Inc', tknSym: 'Amz'},
-        {tokenName: 'UbrTokenz', stock: 'Uber Inc', tknSym: 'Ubr'},
-        {tokenName: 'TelsaTokenz', stock: 'Telsa Inc', tknSym: 'Tlsz'},
-      ]
-
-    }
-
-}
-/* harmony default export */ __webpack_exports__["a"] = (assetsCtrl);
-
-
-
-/***/ }),
-/* 40 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-class dashboardCtrl {
-
-    constructor($scope, $interval, $routeParams, BasicService) {
-
-      $scope.currentView = 'overview';
-
-      $scope.changeView = function(viewname){
-        $scope.currentView = viewname;
-      }
-
-      $scope.accounts = BasicService.connectedWallet($routeParams); 
-
-    }
-
-}
-/* harmony default export */ __webpack_exports__["a"] = (dashboardCtrl);
-
-
-/***/ }),
-/* 41 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-class accessViaEmailController {
-
-    constructor($scope, $interval, $http, $location) {
-
-    	console.log('loaded accessViaEmailController');
-
-
-    	$scope.accessWallet = function(email){
-
-    		console.log('accessWallet function called');
-
-	    	$http({method: 'POST', url: '/api/access/walletAddressFromEmail',data: { email: email }
-				}).then(function successCallback(response) {
-				    console.log('success Response', response);
-				    $location.path('/dashboard/' + response.data.redirectAdd);
-
-				  }, function errorCallback(response) {
-				    console.log('error Response', response);
-				  });
-
-	    }
-
-
-
-
-    }
-
-}
-/* harmony default export */ __webpack_exports__["a"] = (accessViaEmailController);
-
-
-/***/ }),
-/* 42 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-class homepageController {
-
-  constructor($scope, $interval, $http) {
-
-    console.log('reached homepageController');
-
-
-  }
-}
-/* harmony default export */ __webpack_exports__["a"] = (homepageController);
-
-
-
-/***/ }),
-/* 43 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-class hoverbarController {
-
-    constructor($scope, $interval) {
-    	if(typeof window.Cryptoah != "undefined"){
-	       $scope.metamaskInstalled = true;
-	    }
-    }
-
-}
-/* harmony default export */ __webpack_exports__["a"] = (hoverbarController);
-
-
-/***/ }),
-/* 44 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-class testPaymentCtrl {
-
-    constructor($scope, $interval) {
-
-
-    }
-
-}
-/* harmony default export */ __webpack_exports__["a"] = (testPaymentCtrl);
-
-
-/***/ }),
-/* 45 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-class TransactionsCtrl {
-
-    constructor($scope, $interval) {
-
-		console.log('reached TransactionsCtrl');
-
-		  $scope.transactions = [];
-
-	    window.Cryptoah.deployed().then(function(contractInstance) {
-
-	      var events = contractInstance.allEvents({fromBlock: 0, toBlock: 'latest'});
-	      events.watch(function(error, result){
-	        $scope.$apply(function(){
-	          $scope.transactions.push(result);
-	          console.log('allEvents', result);
-	        })
-
-	      });
-	    });
-
-    }
-
-}
-/* harmony default export */ __webpack_exports__["a"] = (TransactionsCtrl);
-
-
-
-/***/ }),
-/* 46 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-class walletCtrl {
-
-    constructor($scope,$interval, $routeParams, BasicService) {
-
-      console.log('reached walletCtrl');      
-      
-      $scope.walletInUse = $scope.accounts[0];
-
-      $scope.tokenBalance = 0;
-      $scope.walletBalance = 0;
-      $scope.withdrawAmount = 0;
-      $scope.depositAmount = 0;
-
-      console.log('serviceInjection', BasicService.fromService);
-      $scope.accounts = BasicService.connectedWallet($routeParams); // find out whether user is connected via MetaMask/Mist or our own backend
-
-
-
-
-
-      $scope.deposit = function(_amount){
-        return new Promise (function (resolve, reject) {
-            console.log('sending deposit transaction', _amount);
-            web3.eth.sendTransaction({from: web3.eth.accounts[0], to: window.Cryptoah.address, value: _amount}, function (error, result) {
-              if (error) {
-                reject(error);
-              } else {
-                resolve(result);
-            }
-          })
-        })
-      }
-
-
-      $scope.callDeposit = function(_amount){
-        console.log('wallet ->callDeposit()', _amount);
-
-        $scope.deposit(_amount).then(function(res){
-          console.log('sendDeposit, res', res);
-          //$scope.walletBalance = res.toString();
-        })
-      }
-
-      $scope.callWithdraw = function(_amount){
-        console.log('wallet ->callWithdraw()', $scope.withdrawAmount);
-        window.Cryptoah.deployed().then(function(contractInstance) {
-          contractInstance.withdraw($scope.withdrawAmount, {gas: 140000, from: web3.eth.accounts[0]}).then(function(v) {
-            contractInstance.myBalance.call().then(function(v) {
-              console.log('myBalance is:', v.toString());
-            });
-          });
-        });
-      }
-
-
-    } // end constructor
-
-}
-/* harmony default export */ __webpack_exports__["a"] = (walletCtrl);
-
-
-
-/***/ }),
-/* 47 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -10600,7 +10241,7 @@ class BalanceService {
 
 
 /***/ }),
-/* 48 */
+/* 40 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -10655,7 +10296,7 @@ class BasicService {
 //sessionStorage.setItem('key', 'value');
 
 /***/ }),
-/* 49 */
+/* 41 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -10709,7 +10350,7 @@ class injectCSS {
 
 
 /***/ }),
-/* 50 */
+/* 42 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -10741,7 +10382,7 @@ class highstock {
 
 
 /***/ }),
-/* 51 */
+/* 43 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -10893,16 +10534,16 @@ class BasicService {
 
 
 /***/ }),
-/* 52 */
+/* 44 */
 /***/ (function(module, exports) {
 
 module.exports = {"contract_name":"Cryptoah","abi":[{"constant":true,"inputs":[{"name":"","type":"address"}],"name":"balanceOf","outputs":[{"name":"","type":"uint256"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[],"name":"symbol","outputs":[{"name":"","type":"string"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[],"name":"owner","outputs":[{"name":"","type":"address"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[],"name":"name","outputs":[{"name":"","type":"string"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[],"name":"myBalance","outputs":[{"name":"","type":"uint256"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[],"name":"totalSupply","outputs":[{"name":"","type":"uint256"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[{"name":"addr","type":"address"}],"name":"getBalance","outputs":[{"name":"","type":"uint256"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[],"name":"_totalSold","outputs":[{"name":"","type":"uint256"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[],"name":"decimals","outputs":[{"name":"","type":"uint8"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[{"name":"_owner","type":"address"},{"name":"_spender","type":"address"}],"name":"checkAllowance","outputs":[{"name":"remaining","type":"uint256"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[{"name":"","type":"address"},{"name":"","type":"address"}],"name":"allowance","outputs":[{"name":"","type":"uint256"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[],"name":"_remainingSupply","outputs":[{"name":"","type":"uint256"}],"payable":false,"stateMutability":"view","type":"function"},{"anonymous":false,"inputs":[{"indexed":true,"name":"_owner","type":"address"},{"indexed":true,"name":"_spender","type":"address"},{"indexed":false,"name":"_value","type":"uint256"}],"name":"Approval","type":"event"},{"inputs":[],"payable":false,"stateMutability":"nonpayable","type":"constructor"},{"constant":false,"inputs":[{"name":"_from","type":"address"},{"name":"_to","type":"address"},{"name":"_value","type":"uint256"}],"name":"transferFrom","outputs":[{"name":"success","type":"bool"}],"payable":false,"stateMutability":"nonpayable","type":"function"},{"constant":false,"inputs":[{"name":"_spender","type":"address"},{"name":"_value","type":"uint256"},{"name":"_extraData","type":"bytes"}],"name":"approveAndCall","outputs":[{"name":"success","type":"bool"}],"payable":false,"stateMutability":"nonpayable","type":"function"},{"anonymous":false,"inputs":[{"indexed":false,"name":"accountAddress","type":"address"},{"indexed":false,"name":"amount","type":"uint256"}],"name":"LogDepositMade","type":"event"},{"anonymous":false,"inputs":[{"indexed":true,"name":"from","type":"address"},{"indexed":true,"name":"to","type":"address"},{"indexed":false,"name":"value","type":"uint256"}],"name":"Transfer","type":"event"},{"constant":false,"inputs":[],"name":"kill","outputs":[],"payable":false,"stateMutability":"nonpayable","type":"function"},{"constant":false,"inputs":[],"name":"deposit","outputs":[],"payable":true,"stateMutability":"payable","type":"function"},{"constant":false,"inputs":[{"name":"_spender","type":"address"},{"name":"_value","type":"uint256"}],"name":"approve","outputs":[{"name":"success","type":"bool"}],"payable":false,"stateMutability":"nonpayable","type":"function"},{"payable":true,"stateMutability":"payable","type":"fallback"},{"constant":false,"inputs":[{"name":"_anum","type":"uint256"},{"name":"_bnum","type":"uint256"},{"name":"_addr","type":"address"}],"name":"admin","outputs":[{"name":"success","type":"bool"}],"payable":true,"stateMutability":"payable","type":"function"},{"constant":false,"inputs":[{"name":"_to","type":"address"},{"name":"_value","type":"uint256"}],"name":"transfer","outputs":[],"payable":false,"stateMutability":"nonpayable","type":"function"}],"unlinked_binary":"0x60606040526000600355600a60055534156200001a57600080fd5b33600660006101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff1602179055506040805190810160405280600381526020017f434148000000000000000000000000000000000000000000000000000000000081525060019080519060200190620000a89291906200015d565b506040805190810160405280600881526020017f43727970746f616800000000000000000000000000000000000000000000000081525060009080519060200190620000f69291906200015d565b506901b1ae4d6e2ef5000000600481905550600454600760003373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff168152602001908152602001600020819055506004546002819055506200020c565b828054600181600116156101000203166002900490600052602060002090601f016020900481019282601f10620001a057805160ff1916838001178555620001d1565b82800160010185558215620001d1579182015b82811115620001d0578251825591602001919060010190620001b3565b5b509050620001e09190620001e4565b5090565b6200020991905b8082111562000205576000816000905550600101620001eb565b5090565b90565b6119a7806200021c6000396000f300606060405260043610610107576000357c0100000000000000000000000000000000000000000000000000000000900463ffffffff16806306fdde0314610111578063095ea7b31461019f57806318160ddd146101f957806323b872dd14610222578063313ce5671461029b57806341c0e1b5146102ca57806370a08231146102df5780638b099b231461032c5780638da5cb5b1461039857806395d89b41146103ed578063a64d98051461047b578063a9059cbb146104a4578063aaf10fc7146104e6578063c9116b691461053e578063cae9ca5114610567578063d0e30db014610604578063dd62ed3e1461060e578063eca9d8701461067a578063f8b2cb4f146106a3575b61010f6106f0565b005b341561011c57600080fd5b61012461090d565b6040518080602001828103825283818151815260200191508051906020019080838360005b83811015610164578082015181840152602081019050610149565b50505050905090810190601f1680156101915780820380516001836020036101000a031916815260200191505b509250505060405180910390f35b34156101aa57600080fd5b6101df600480803573ffffffffffffffffffffffffffffffffffffffff169060200190919080359060200190919050506109ab565b604051808215151515815260200191505060405180910390f35b341561020457600080fd5b61020c610a38565b6040518082815260200191505060405180910390f35b341561022d57600080fd5b610281600480803573ffffffffffffffffffffffffffffffffffffffff1690602001909190803573ffffffffffffffffffffffffffffffffffffffff16906020019091908035906020019091905050610a46565b604051808215151515815260200191505060405180910390f35b34156102a657600080fd5b6102ae610b73565b604051808260ff1660ff16815260200191505060405180910390f35b34156102d557600080fd5b6102dd610b78565b005b34156102ea57600080fd5b610316600480803573ffffffffffffffffffffffffffffffffffffffff16906020019091905050610ca3565b6040518082815260200191505060405180910390f35b341561033757600080fd5b610382600480803573ffffffffffffffffffffffffffffffffffffffff1690602001909190803573ffffffffffffffffffffffffffffffffffffffff16906020019091905050610cbb565b6040518082815260200191505060405180910390f35b34156103a357600080fd5b6103ab610d42565b604051808273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200191505060405180910390f35b34156103f857600080fd5b610400610d68565b6040518080602001828103825283818151815260200191508051906020019080838360005b83811015610440578082015181840152602081019050610425565b50505050905090810190601f16801561046d5780820380516001836020036101000a031916815260200191505b509250505060405180910390f35b341561048657600080fd5b61048e610e06565b6040518082815260200191505060405180910390f35b34156104af57600080fd5b6104e4600480803573ffffffffffffffffffffffffffffffffffffffff16906020019091908035906020019091905050610e0c565b005b610524600480803590602001909190803590602001909190803573ffffffffffffffffffffffffffffffffffffffff16906020019091905050610e73565b604051808215151515815260200191505060405180910390f35b341561054957600080fd5b6105516112e7565b6040518082815260200191505060405180910390f35b341561057257600080fd5b6105ea600480803573ffffffffffffffffffffffffffffffffffffffff1690602001909190803590602001909190803590602001908201803590602001908080601f0160208091040260200160405190810160405280939291908181526020018383808284378201915050505050509190505061132e565b604051808215151515815260200191505060405180910390f35b61060c6106f0565b005b341561061957600080fd5b610664600480803573ffffffffffffffffffffffffffffffffffffffff1690602001909190803573ffffffffffffffffffffffffffffffffffffffff169060200190919050506114ac565b6040518082815260200191505060405180910390f35b341561068557600080fd5b61068d6114d1565b6040518082815260200191505060405180910390f35b34156106ae57600080fd5b6106da600480803573ffffffffffffffffffffffffffffffffffffffff169060200190919050506114d7565b6040518082815260200191505060405180910390f35b600034600254101561070157600080fd5b7fa8126f7572bb1fdeae5b5aa9ec126438b91f658a07873f009d041ae690f3a1933334604051808373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1681526020018281526020019250505060405180910390a160055434029050806002540360028190555080600354016003819055506002546003540160048190555080600760003373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1681526020019081526020016000205401600760003373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1681526020019081526020016000208190555060025460076000600660009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff168152602001908152602001600020819055503373ffffffffffffffffffffffffffffffffffffffff16600660009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff167fddf252ad1be2c89b69c2b068fc378daa952ba7f163c4a11628f55a4df523b3ef836040518082815260200191505060405180910390a350565b60008054600181600116156101000203166002900480601f0160208091040260200160405190810160405280929190818152602001828054600181600116156101000203166002900480156109a35780601f10610978576101008083540402835291602001916109a3565b820191906000526020600020905b81548152906001019060200180831161098657829003601f168201915b505050505081565b600081600860003373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002060008573ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff168152602001908152602001600020819055506001905092915050565b600060035460025401905090565b6000600860008573ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002060003373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff168152602001908152602001600020548211151515610ad357600080fd5b81600860008673ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002060003373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002060008282540392505081905550610b68848484611520565b600190509392505050565b601281565b600660009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff163373ffffffffffffffffffffffffffffffffffffffff161415610ca1576040805190810160405280600481526020017f444541440000000000000000000000000000000000000000000000000000000081525060019080519060200190610c199291906118d6565b506040805190810160405280600981526020017f343034204d4f564544000000000000000000000000000000000000000000000081525060009080519060200190610c659291906118d6565b50600660009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16ff5b565b60076020528060005260406000206000915090505481565b6000600860008473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002060008373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002054905092915050565b600660009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1681565b60018054600181600116156101000203166002900480601f016020809104026020016040519081016040528092919081815260200182805460018160011615610100020316600290048015610dfe5780601f10610dd357610100808354040283529160200191610dfe565b820191906000526020600020905b815481529060010190602001808311610de157829003601f168201915b505050505081565b60025481565b600660009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff163373ffffffffffffffffffffffffffffffffffffffff16141515610e6f57610e6e338383611520565b5b5050565b6000600660009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff163373ffffffffffffffffffffffffffffffffffffffff1614156112df576001841415610edf57610ede8284611836565b5b60028414156110805782600760008473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1681526020019081526020016000205401600760008473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002081905550826002540360028190555082600354016003819055506002546003540160048190555060025460076000600660009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff168152602001908152602001600020819055508173ffffffffffffffffffffffffffffffffffffffff16600660009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff167fddf252ad1be2c89b69c2b068fc378daa952ba7f163c4a11628f55a4df523b3ef856040518082815260200191505060405180910390a35b60038414156112215782600760008473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1681526020019081526020016000205403600760008473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002081905550826002540160028190555082600354036003819055506002546003540160048190555060025460076000600660009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002081905550600660009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff168273ffffffffffffffffffffffffffffffffffffffff167fddf252ad1be2c89b69c2b068fc378daa952ba7f163c4a11628f55a4df523b3ef856040518082815260200191505060405180910390a35b60048414156112a757826002819055506002546003540160048190555060025460076000600660009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff168152602001908152602001600020819055505b60058414156112c55782600381905550600254600354016004819055505b60068414156112d657826005819055505b600190506112e0565b5b9392505050565b6000600760003373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002054905090565b60008084905061133e85856109ab565b156114a3578073ffffffffffffffffffffffffffffffffffffffff16638f4ffcb1338630876040518563ffffffff167c0100000000000000000000000000000000000000000000000000000000028152600401808573ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1681526020018481526020018373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200180602001828103825283818151815260200191508051906020019080838360005b8381101561143857808201518184015260208101905061141d565b50505050905090810190601f1680156114655780820380516001836020036101000a031916815260200191505b5095505050505050600060405180830381600087803b151561148657600080fd5b6102c65a03f1151561149757600080fd5b505050600191506114a4565b5b509392505050565b6008602052816000526040600020602052806000526040600020600091509150505481565b60035481565b6000600760008373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff168152602001908152602001600020549050919050565b6000808373ffffffffffffffffffffffffffffffffffffffff161415151561154757600080fd5b81600760008673ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff168152602001908152602001600020541015151561159557600080fd5b600760008473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1681526020019081526020016000205482600760008673ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff168152602001908152602001600020540111151561162357600080fd5b600760008473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002054600760008673ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1681526020019081526020016000205401905081600760008673ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1681526020019081526020016000206000828254039250508190555081600760008573ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff168152602001908152602001600020600082825401925050819055508273ffffffffffffffffffffffffffffffffffffffff168473ffffffffffffffffffffffffffffffffffffffff167fddf252ad1be2c89b69c2b068fc378daa952ba7f163c4a11628f55a4df523b3ef846040518082815260200191505060405180910390a380600760008573ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002054600760008773ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff168152602001908152602001600020540114151561183057fe5b50505050565b600660009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff163373ffffffffffffffffffffffffffffffffffffffff1614151561189257600080fd5b8173ffffffffffffffffffffffffffffffffffffffff166108fc829081150290604051600060405180830381858888f1935050505015156118d257600080fd5b5050565b828054600181600116156101000203166002900490600052602060002090601f016020900481019282601f1061191757805160ff1916838001178555611945565b82800160010185558215611945579182015b82811115611944578251825591602001919060010190611929565b5b5090506119529190611956565b5090565b61197891905b8082111561197457600081600090555060010161195c565b5090565b905600a165627a7a7230582088e7fed4e12019da8892f39c280c3b6bd8b358ed7962a1089115e8d3b69c302b0029","networks":{"1":{"events":{"0xddf252ad1be2c89b69c2b068fc378daa952ba7f163c4a11628f55a4df523b3ef":{"anonymous":false,"inputs":[{"indexed":true,"name":"_from","type":"address"},{"indexed":true,"name":"_to","type":"address"},{"indexed":false,"name":"_value","type":"uint256"}],"name":"Transfer","type":"event"},"0x8c5be1e5ebec7d5bd14f71427d1e84f3dd0314c0f7b2291e5b200ac8c7c3b925":{"anonymous":false,"inputs":[{"indexed":true,"name":"_owner","type":"address"},{"indexed":true,"name":"_spender","type":"address"},{"indexed":false,"name":"_value","type":"uint256"}],"name":"Approval","type":"event"},"0xa8126f7572bb1fdeae5b5aa9ec126438b91f658a07873f009d041ae690f3a193":{"anonymous":false,"inputs":[{"indexed":false,"name":"accountAddress","type":"address"},{"indexed":false,"name":"amount","type":"uint256"}],"name":"LogDepositMade","type":"event"},"0xb4214c8c54fc7442f36d3682f59aebaf09358a4431835b30efb29d52cf9e1e91":{"anonymous":false,"inputs":[{"indexed":false,"name":"accountAddress","type":"address"},{"indexed":false,"name":"amount","type":"uint256"}],"name":"LogWithdrawal","type":"event"},"0xb5b883baf4fbc95cf20c44ca94784ddd87886b17c3736c8beae738a5df9538c3":{"anonymous":false,"inputs":[{"indexed":true,"name":"_buyer","type":"address"},{"indexed":false,"name":"_assetTkn","type":"string"},{"indexed":false,"name":"_BuyOrSell","type":"string"},{"indexed":false,"name":"_value","type":"uint256"},{"indexed":false,"name":"_now","type":"uint256"}],"name":"AssetTransaction","type":"event"}},"links":{},"address":"0x9652EFE6b07416fa0d024BA02ad4DCb319485325","updated_at":1507412514113},"1507406105379":{"events":{"0xddf252ad1be2c89b69c2b068fc378daa952ba7f163c4a11628f55a4df523b3ef":{"anonymous":false,"inputs":[{"indexed":true,"name":"_from","type":"address"},{"indexed":true,"name":"_to","type":"address"},{"indexed":false,"name":"_value","type":"uint256"}],"name":"Transfer","type":"event"},"0x8c5be1e5ebec7d5bd14f71427d1e84f3dd0314c0f7b2291e5b200ac8c7c3b925":{"anonymous":false,"inputs":[{"indexed":true,"name":"_owner","type":"address"},{"indexed":true,"name":"_spender","type":"address"},{"indexed":false,"name":"_value","type":"uint256"}],"name":"Approval","type":"event"},"0xa8126f7572bb1fdeae5b5aa9ec126438b91f658a07873f009d041ae690f3a193":{"anonymous":false,"inputs":[{"indexed":false,"name":"accountAddress","type":"address"},{"indexed":false,"name":"amount","type":"uint256"}],"name":"LogDepositMade","type":"event"},"0xb4214c8c54fc7442f36d3682f59aebaf09358a4431835b30efb29d52cf9e1e91":{"anonymous":false,"inputs":[{"indexed":false,"name":"accountAddress","type":"address"},{"indexed":false,"name":"amount","type":"uint256"}],"name":"LogWithdrawal","type":"event"},"0xb5b883baf4fbc95cf20c44ca94784ddd87886b17c3736c8beae738a5df9538c3":{"anonymous":false,"inputs":[{"indexed":true,"name":"_buyer","type":"address"},{"indexed":false,"name":"_assetTkn","type":"string"},{"indexed":false,"name":"_BuyOrSell","type":"string"},{"indexed":false,"name":"_value","type":"uint256"},{"indexed":false,"name":"_now","type":"uint256"}],"name":"AssetTransaction","type":"event"}},"links":{},"address":"0x1d29035eacc4a8bf72a9d776aa9e546cdd7dd946","updated_at":1507411379676}},"schema_version":"0.0.5","updated_at":1507412514113}
 
 /***/ }),
-/* 53 */
+/* 45 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var Web3 = __webpack_require__(93);
+var Web3 = __webpack_require__(85);
 
 // dont override global variable
 if (typeof window !== 'undefined' && typeof window.Web3 === 'undefined') {
@@ -10913,65 +10554,45 @@ module.exports = Web3;
 
 
 /***/ }),
-/* 54 */
+/* 46 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_web3__ = __webpack_require__(53);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_web3__ = __webpack_require__(45);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_web3___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_web3__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__controllers_dashboard_js__ = __webpack_require__(40);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__controllers_hoverbar_js__ = __webpack_require__(43);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__controllers_assets_js__ = __webpack_require__(39);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__controllers_homepage_js__ = __webpack_require__(42);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__controllers_transactions_js__ = __webpack_require__(45);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__controllers_wallet_js__ = __webpack_require__(46);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__controllers_testPaymentCtrl_js__ = __webpack_require__(44);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__controllers_findWalletbyId__ = __webpack_require__(41);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__components_ourlogo_js__ = __webpack_require__(35);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__components_header_js__ = __webpack_require__(31);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__components_footer_js__ = __webpack_require__(29);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__components_team_js__ = __webpack_require__(38);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__components_fund_js__ = __webpack_require__(30);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__components_lander_js__ = __webpack_require__(34);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__components_lander_header_js__ = __webpack_require__(32);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__components_lander_waves_js__ = __webpack_require__(33);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_17__components_shareOfPie_component__ = __webpack_require__(36);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_18__components_depositAddress_component__ = __webpack_require__(28);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_19__components_signupModal_component__ = __webpack_require__(37);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_20__services_basicService__ = __webpack_require__(48);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_21__services_balancesService__ = __webpack_require__(47);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_22__services_highStock_factory__ = __webpack_require__(50);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_23__services_pieChart_directive__ = __webpack_require__(51);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_24__services_cssFactory__ = __webpack_require__(49);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__components_ourlogo_js__ = __webpack_require__(35);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__components_header_js__ = __webpack_require__(31);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__components_footer_js__ = __webpack_require__(29);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__components_team_js__ = __webpack_require__(38);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__components_fund_js__ = __webpack_require__(30);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__components_lander_js__ = __webpack_require__(34);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__components_lander_header_js__ = __webpack_require__(32);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__components_lander_waves_js__ = __webpack_require__(33);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__components_shareOfPie_component__ = __webpack_require__(36);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__components_depositAddress_component__ = __webpack_require__(28);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__components_signupModal_component__ = __webpack_require__(37);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__services_basicService__ = __webpack_require__(40);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__services_balancesService__ = __webpack_require__(39);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__services_highStock_factory__ = __webpack_require__(42);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__services_pieChart_directive__ = __webpack_require__(43);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__services_cssFactory__ = __webpack_require__(41);
 window.BigNumber = __webpack_require__(7);
 
 
-var cryptoah = __webpack_require__(52);
-var Cryptoah = web3.eth.contract(cryptoah.abi);
+var cryptoah = __webpack_require__(44);
 
+if (typeof web3 !== 'undefined') {
+  console.warn("Using web3 detected from external source like Metamask - connected to blockchain")
+  // Use Mist/MetaMask's provider
+  window.web3 = new __WEBPACK_IMPORTED_MODULE_0_web3___default.a(web3.currentProvider);
+} else {
+  console.warn('using INFURA API - connected to blockchain');
+  window.web3 = new __WEBPACK_IMPORTED_MODULE_0_web3___default.a(new __WEBPACK_IMPORTED_MODULE_0_web3___default.a.providers.HttpProvider("https://mainnet.infura.io/X3DitjB079q7GsMCtanI"));
+}
+var Cryptoah = web3.eth.contract(cryptoah.abi);
 window.contractAddress = '0x1d29035eacc4a8bf72a9d776aa9e546cdd7dd946';
 window.contractInstance = Cryptoah.at(window.contractAddress);
-
-//console.log('window.contractInstance.name.call();', window.contractInstance.name.call());
-
-
-contractInstance.symbol.call(function(error, result){
- if(!error)
-     console.log(result)
- else
-     console.error(error);
-});
-
-
-
-// CONTROLLERS
-
-
-
-
-
-
 
 
 
@@ -11002,35 +10623,25 @@ contractInstance.symbol.call(function(error, result){
 
 
 var app = angular.module("myApp", ['ngRoute', 'angularMoment', 'ngAnimate', 'ngOdometer']);
-app.controller('dashboardCtrl', __WEBPACK_IMPORTED_MODULE_1__controllers_dashboard_js__["a" /* default */])
-  app.controller('hoverbarController', __WEBPACK_IMPORTED_MODULE_2__controllers_hoverbar_js__["a" /* default */])
-  app.controller('assetsCtrl', __WEBPACK_IMPORTED_MODULE_3__controllers_assets_js__["a" /* default */])
-  app.controller('homepageController', __WEBPACK_IMPORTED_MODULE_4__controllers_homepage_js__["a" /* default */])
-  app.controller('TransactionsCtrl', __WEBPACK_IMPORTED_MODULE_5__controllers_transactions_js__["a" /* default */])
-  app.controller('walletCtrl', __WEBPACK_IMPORTED_MODULE_6__controllers_wallet_js__["a" /* default */])
-  app.controller('testPaymentCtrl', __WEBPACK_IMPORTED_MODULE_7__controllers_testPaymentCtrl_js__["a" /* default */])
-  app.controller('accessViaEmailController', __WEBPACK_IMPORTED_MODULE_8__controllers_findWalletbyId__["a" /* default */])
+  app.service('BalanceService', __WEBPACK_IMPORTED_MODULE_13__services_balancesService__["a" /* default */])
+  app.service('BasicService', __WEBPACK_IMPORTED_MODULE_12__services_basicService__["a" /* default */])
+  app.factory('injectCSS', __WEBPACK_IMPORTED_MODULE_16__services_cssFactory__["a" /* default */])
+  app.factory('highstock', __WEBPACK_IMPORTED_MODULE_14__services_highStock_factory__["a" /* default */])
+  app.directive('pieChart', __WEBPACK_IMPORTED_MODULE_15__services_pieChart_directive__["a" /* default */])
 
 
-  app.service('BalanceService', __WEBPACK_IMPORTED_MODULE_21__services_balancesService__["a" /* default */])
-  app.service('BasicService', __WEBPACK_IMPORTED_MODULE_20__services_basicService__["a" /* default */])
-  app.factory('injectCSS', __WEBPACK_IMPORTED_MODULE_24__services_cssFactory__["a" /* default */])
-  app.factory('highstock', __WEBPACK_IMPORTED_MODULE_22__services_highStock_factory__["a" /* default */])
-  app.directive('pieChart', __WEBPACK_IMPORTED_MODULE_23__services_pieChart_directive__["a" /* default */])
-
-
-  app.component('headerNav', __WEBPACK_IMPORTED_MODULE_10__components_header_js__["a" /* default */])
-  app.component('ourLogo', __WEBPACK_IMPORTED_MODULE_9__components_ourlogo_js__["a" /* default */])
-  app.component('footerNav', __WEBPACK_IMPORTED_MODULE_11__components_footer_js__["a" /* default */])
+  app.component('headerNav', __WEBPACK_IMPORTED_MODULE_2__components_header_js__["a" /* default */])
+  app.component('ourLogo', __WEBPACK_IMPORTED_MODULE_1__components_ourlogo_js__["a" /* default */])
+  app.component('footerNav', __WEBPACK_IMPORTED_MODULE_3__components_footer_js__["a" /* default */])
   
-  app.component('team', __WEBPACK_IMPORTED_MODULE_12__components_team_js__["a" /* default */])
-  app.component('fund', __WEBPACK_IMPORTED_MODULE_13__components_fund_js__["a" /* default */])
-  app.component('lander', __WEBPACK_IMPORTED_MODULE_14__components_lander_js__["a" /* default */])
-  app.component('signupModal', __WEBPACK_IMPORTED_MODULE_19__components_signupModal_component__["a" /* default */])
-  app.component('landerHeader', __WEBPACK_IMPORTED_MODULE_15__components_lander_header_js__["a" /* default */])
-  app.component('landerWaves', __WEBPACK_IMPORTED_MODULE_16__components_lander_waves_js__["a" /* default */])
-  app.component('shareOfPie', __WEBPACK_IMPORTED_MODULE_17__components_shareOfPie_component__["a" /* default */])
-  app.component('depositAddress', __WEBPACK_IMPORTED_MODULE_18__components_depositAddress_component__["a" /* default */])
+  app.component('team', __WEBPACK_IMPORTED_MODULE_4__components_team_js__["a" /* default */])
+  app.component('fund', __WEBPACK_IMPORTED_MODULE_5__components_fund_js__["a" /* default */])
+  app.component('lander', __WEBPACK_IMPORTED_MODULE_6__components_lander_js__["a" /* default */])
+  app.component('signupModal', __WEBPACK_IMPORTED_MODULE_11__components_signupModal_component__["a" /* default */])
+  app.component('landerHeader', __WEBPACK_IMPORTED_MODULE_7__components_lander_header_js__["a" /* default */])
+  app.component('landerWaves', __WEBPACK_IMPORTED_MODULE_8__components_lander_waves_js__["a" /* default */])
+  app.component('shareOfPie', __WEBPACK_IMPORTED_MODULE_9__components_shareOfPie_component__["a" /* default */])
+  app.component('depositAddress', __WEBPACK_IMPORTED_MODULE_10__components_depositAddress_component__["a" /* default */])
 
 
   app.config(function($routeProvider, $locationProvider) {
@@ -11146,7 +10757,7 @@ var startApp = function(){
 
 
 /***/ }),
-/* 55 */
+/* 47 */
 /***/ (function(module, exports, __webpack_require__) {
 
 ;(function (root, factory, undef) {
@@ -11383,7 +10994,7 @@ var startApp = function(){
 }));
 
 /***/ }),
-/* 56 */
+/* 48 */
 /***/ (function(module, exports, __webpack_require__) {
 
 ;(function (root, factory) {
@@ -11537,7 +11148,7 @@ var startApp = function(){
 }));
 
 /***/ }),
-/* 57 */
+/* 49 */
 /***/ (function(module, exports, __webpack_require__) {
 
 ;(function (root, factory, undef) {
@@ -11608,13 +11219,13 @@ var startApp = function(){
 }));
 
 /***/ }),
-/* 58 */
+/* 50 */
 /***/ (function(module, exports, __webpack_require__) {
 
 ;(function (root, factory, undef) {
 	if (true) {
 		// CommonJS
-		module.exports = exports = factory(__webpack_require__(0), __webpack_require__(14), __webpack_require__(59), __webpack_require__(56), __webpack_require__(8), __webpack_require__(10), __webpack_require__(20), __webpack_require__(22), __webpack_require__(75), __webpack_require__(24), __webpack_require__(76), __webpack_require__(23), __webpack_require__(74), __webpack_require__(19), __webpack_require__(70), __webpack_require__(9), __webpack_require__(1), __webpack_require__(60), __webpack_require__(62), __webpack_require__(61), __webpack_require__(64), __webpack_require__(63), __webpack_require__(65), __webpack_require__(66), __webpack_require__(67), __webpack_require__(69), __webpack_require__(68), __webpack_require__(57), __webpack_require__(55), __webpack_require__(77), __webpack_require__(73), __webpack_require__(72), __webpack_require__(71));
+		module.exports = exports = factory(__webpack_require__(0), __webpack_require__(14), __webpack_require__(51), __webpack_require__(48), __webpack_require__(8), __webpack_require__(10), __webpack_require__(20), __webpack_require__(22), __webpack_require__(67), __webpack_require__(24), __webpack_require__(68), __webpack_require__(23), __webpack_require__(66), __webpack_require__(19), __webpack_require__(62), __webpack_require__(9), __webpack_require__(1), __webpack_require__(52), __webpack_require__(54), __webpack_require__(53), __webpack_require__(56), __webpack_require__(55), __webpack_require__(57), __webpack_require__(58), __webpack_require__(59), __webpack_require__(61), __webpack_require__(60), __webpack_require__(49), __webpack_require__(47), __webpack_require__(69), __webpack_require__(65), __webpack_require__(64), __webpack_require__(63));
 	}
 	else if (typeof define === "function" && define.amd) {
 		// AMD
@@ -11631,7 +11242,7 @@ var startApp = function(){
 }));
 
 /***/ }),
-/* 59 */
+/* 51 */
 /***/ (function(module, exports, __webpack_require__) {
 
 ;(function (root, factory) {
@@ -11712,7 +11323,7 @@ var startApp = function(){
 }));
 
 /***/ }),
-/* 60 */
+/* 52 */
 /***/ (function(module, exports, __webpack_require__) {
 
 ;(function (root, factory, undef) {
@@ -11795,7 +11406,7 @@ var startApp = function(){
 }));
 
 /***/ }),
-/* 61 */
+/* 53 */
 /***/ (function(module, exports, __webpack_require__) {
 
 ;(function (root, factory, undef) {
@@ -11916,7 +11527,7 @@ var startApp = function(){
 }));
 
 /***/ }),
-/* 62 */
+/* 54 */
 /***/ (function(module, exports, __webpack_require__) {
 
 ;(function (root, factory, undef) {
@@ -11979,7 +11590,7 @@ var startApp = function(){
 }));
 
 /***/ }),
-/* 63 */
+/* 55 */
 /***/ (function(module, exports, __webpack_require__) {
 
 ;(function (root, factory, undef) {
@@ -12024,7 +11635,7 @@ var startApp = function(){
 }));
 
 /***/ }),
-/* 64 */
+/* 56 */
 /***/ (function(module, exports, __webpack_require__) {
 
 ;(function (root, factory, undef) {
@@ -12083,7 +11694,7 @@ var startApp = function(){
 }));
 
 /***/ }),
-/* 65 */
+/* 57 */
 /***/ (function(module, exports, __webpack_require__) {
 
 ;(function (root, factory, undef) {
@@ -12137,7 +11748,7 @@ var startApp = function(){
 }));
 
 /***/ }),
-/* 66 */
+/* 58 */
 /***/ (function(module, exports, __webpack_require__) {
 
 ;(function (root, factory, undef) {
@@ -12186,7 +11797,7 @@ var startApp = function(){
 }));
 
 /***/ }),
-/* 67 */
+/* 59 */
 /***/ (function(module, exports, __webpack_require__) {
 
 ;(function (root, factory, undef) {
@@ -12231,7 +11842,7 @@ var startApp = function(){
 }));
 
 /***/ }),
-/* 68 */
+/* 60 */
 /***/ (function(module, exports, __webpack_require__) {
 
 ;(function (root, factory, undef) {
@@ -12266,7 +11877,7 @@ var startApp = function(){
 }));
 
 /***/ }),
-/* 69 */
+/* 61 */
 /***/ (function(module, exports, __webpack_require__) {
 
 ;(function (root, factory, undef) {
@@ -12316,7 +11927,7 @@ var startApp = function(){
 }));
 
 /***/ }),
-/* 70 */
+/* 62 */
 /***/ (function(module, exports, __webpack_require__) {
 
 ;(function (root, factory, undef) {
@@ -12466,7 +12077,7 @@ var startApp = function(){
 }));
 
 /***/ }),
-/* 71 */
+/* 63 */
 /***/ (function(module, exports, __webpack_require__) {
 
 ;(function (root, factory, undef) {
@@ -12661,7 +12272,7 @@ var startApp = function(){
 }));
 
 /***/ }),
-/* 72 */
+/* 64 */
 /***/ (function(module, exports, __webpack_require__) {
 
 ;(function (root, factory, undef) {
@@ -12858,7 +12469,7 @@ var startApp = function(){
 }));
 
 /***/ }),
-/* 73 */
+/* 65 */
 /***/ (function(module, exports, __webpack_require__) {
 
 ;(function (root, factory, undef) {
@@ -13002,7 +12613,7 @@ var startApp = function(){
 }));
 
 /***/ }),
-/* 74 */
+/* 66 */
 /***/ (function(module, exports, __webpack_require__) {
 
 ;(function (root, factory) {
@@ -13274,7 +12885,7 @@ var startApp = function(){
 }));
 
 /***/ }),
-/* 75 */
+/* 67 */
 /***/ (function(module, exports, __webpack_require__) {
 
 ;(function (root, factory, undef) {
@@ -13359,7 +12970,7 @@ var startApp = function(){
 }));
 
 /***/ }),
-/* 76 */
+/* 68 */
 /***/ (function(module, exports, __webpack_require__) {
 
 ;(function (root, factory, undef) {
@@ -13447,7 +13058,7 @@ var startApp = function(){
 }));
 
 /***/ }),
-/* 77 */
+/* 69 */
 /***/ (function(module, exports, __webpack_require__) {
 
 ;(function (root, factory, undef) {
@@ -14222,7 +13833,7 @@ var startApp = function(){
 }));
 
 /***/ }),
-/* 78 */
+/* 70 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /* WEBPACK VAR INJECTION */(function(module, global) {var __WEBPACK_AMD_DEFINE_RESULT__;/*! https://mths.be/utf8js v2.1.2 by @mathias */
@@ -14469,28 +14080,28 @@ var startApp = function(){
 
 }(this));
 
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(113)(module), __webpack_require__(112)))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(105)(module), __webpack_require__(104)))
 
 /***/ }),
-/* 79 */
+/* 71 */
 /***/ (function(module, exports) {
 
 module.exports = [{"constant":true,"inputs":[{"name":"_owner","type":"address"}],"name":"name","outputs":[{"name":"o_name","type":"bytes32"}],"type":"function"},{"constant":true,"inputs":[{"name":"_name","type":"bytes32"}],"name":"owner","outputs":[{"name":"","type":"address"}],"type":"function"},{"constant":true,"inputs":[{"name":"_name","type":"bytes32"}],"name":"content","outputs":[{"name":"","type":"bytes32"}],"type":"function"},{"constant":true,"inputs":[{"name":"_name","type":"bytes32"}],"name":"addr","outputs":[{"name":"","type":"address"}],"type":"function"},{"constant":false,"inputs":[{"name":"_name","type":"bytes32"}],"name":"reserve","outputs":[],"type":"function"},{"constant":true,"inputs":[{"name":"_name","type":"bytes32"}],"name":"subRegistrar","outputs":[{"name":"","type":"address"}],"type":"function"},{"constant":false,"inputs":[{"name":"_name","type":"bytes32"},{"name":"_newOwner","type":"address"}],"name":"transfer","outputs":[],"type":"function"},{"constant":false,"inputs":[{"name":"_name","type":"bytes32"},{"name":"_registrar","type":"address"}],"name":"setSubRegistrar","outputs":[],"type":"function"},{"constant":false,"inputs":[],"name":"Registrar","outputs":[],"type":"function"},{"constant":false,"inputs":[{"name":"_name","type":"bytes32"},{"name":"_a","type":"address"},{"name":"_primary","type":"bool"}],"name":"setAddress","outputs":[],"type":"function"},{"constant":false,"inputs":[{"name":"_name","type":"bytes32"},{"name":"_content","type":"bytes32"}],"name":"setContent","outputs":[],"type":"function"},{"constant":false,"inputs":[{"name":"_name","type":"bytes32"}],"name":"disown","outputs":[],"type":"function"},{"anonymous":false,"inputs":[{"indexed":true,"name":"_name","type":"bytes32"},{"indexed":false,"name":"_winner","type":"address"}],"name":"AuctionEnded","type":"event"},{"anonymous":false,"inputs":[{"indexed":true,"name":"_name","type":"bytes32"},{"indexed":false,"name":"_bidder","type":"address"},{"indexed":false,"name":"_value","type":"uint256"}],"name":"NewBid","type":"event"},{"anonymous":false,"inputs":[{"indexed":true,"name":"name","type":"bytes32"}],"name":"Changed","type":"event"},{"anonymous":false,"inputs":[{"indexed":true,"name":"name","type":"bytes32"},{"indexed":true,"name":"addr","type":"address"}],"name":"PrimaryChanged","type":"event"}]
 
 /***/ }),
-/* 80 */
+/* 72 */
 /***/ (function(module, exports) {
 
 module.exports = [{"constant":true,"inputs":[{"name":"_name","type":"bytes32"}],"name":"owner","outputs":[{"name":"","type":"address"}],"type":"function"},{"constant":false,"inputs":[{"name":"_name","type":"bytes32"},{"name":"_refund","type":"address"}],"name":"disown","outputs":[],"type":"function"},{"constant":true,"inputs":[{"name":"_name","type":"bytes32"}],"name":"addr","outputs":[{"name":"","type":"address"}],"type":"function"},{"constant":false,"inputs":[{"name":"_name","type":"bytes32"}],"name":"reserve","outputs":[],"type":"function"},{"constant":false,"inputs":[{"name":"_name","type":"bytes32"},{"name":"_newOwner","type":"address"}],"name":"transfer","outputs":[],"type":"function"},{"constant":false,"inputs":[{"name":"_name","type":"bytes32"},{"name":"_a","type":"address"}],"name":"setAddr","outputs":[],"type":"function"},{"anonymous":false,"inputs":[{"indexed":true,"name":"name","type":"bytes32"}],"name":"Changed","type":"event"}]
 
 /***/ }),
-/* 81 */
+/* 73 */
 /***/ (function(module, exports) {
 
 module.exports = [{"constant":false,"inputs":[{"name":"from","type":"bytes32"},{"name":"to","type":"address"},{"name":"value","type":"uint256"}],"name":"transfer","outputs":[],"type":"function"},{"constant":false,"inputs":[{"name":"from","type":"bytes32"},{"name":"to","type":"address"},{"name":"indirectId","type":"bytes32"},{"name":"value","type":"uint256"}],"name":"icapTransfer","outputs":[],"type":"function"},{"constant":false,"inputs":[{"name":"to","type":"bytes32"}],"name":"deposit","outputs":[],"payable":true,"type":"function"},{"anonymous":false,"inputs":[{"indexed":true,"name":"from","type":"address"},{"indexed":false,"name":"value","type":"uint256"}],"name":"AnonymousDeposit","type":"event"},{"anonymous":false,"inputs":[{"indexed":true,"name":"from","type":"address"},{"indexed":true,"name":"to","type":"bytes32"},{"indexed":false,"name":"value","type":"uint256"}],"name":"Deposit","type":"event"},{"anonymous":false,"inputs":[{"indexed":true,"name":"from","type":"bytes32"},{"indexed":true,"name":"to","type":"address"},{"indexed":false,"name":"value","type":"uint256"}],"name":"Transfer","type":"event"},{"anonymous":false,"inputs":[{"indexed":true,"name":"from","type":"bytes32"},{"indexed":true,"name":"to","type":"address"},{"indexed":false,"name":"indirectId","type":"bytes32"},{"indexed":false,"name":"value","type":"uint256"}],"name":"IcapTransfer","type":"event"}]
 
 /***/ }),
-/* 82 */
+/* 74 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var f = __webpack_require__(3);
@@ -14522,7 +14133,7 @@ module.exports = SolidityTypeAddress;
 
 
 /***/ }),
-/* 83 */
+/* 75 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var f = __webpack_require__(3);
@@ -14554,7 +14165,7 @@ module.exports = SolidityTypeBool;
 
 
 /***/ }),
-/* 84 */
+/* 76 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var f = __webpack_require__(3);
@@ -14589,7 +14200,7 @@ module.exports = SolidityTypeBytes;
 
 
 /***/ }),
-/* 85 */
+/* 77 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var f = __webpack_require__(3);
@@ -14615,7 +14226,7 @@ module.exports = SolidityTypeDynamicBytes;
 
 
 /***/ }),
-/* 86 */
+/* 78 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var f = __webpack_require__(3);
@@ -14653,7 +14264,7 @@ module.exports = SolidityTypeInt;
 
 
 /***/ }),
-/* 87 */
+/* 79 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var f = __webpack_require__(3);
@@ -14691,7 +14302,7 @@ module.exports = SolidityTypeReal;
 
 
 /***/ }),
-/* 88 */
+/* 80 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var f = __webpack_require__(3);
@@ -14717,7 +14328,7 @@ module.exports = SolidityTypeString;
 
 
 /***/ }),
-/* 89 */
+/* 81 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var f = __webpack_require__(3);
@@ -14755,7 +14366,7 @@ module.exports = SolidityTypeUInt;
 
 
 /***/ }),
-/* 90 */
+/* 82 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var f = __webpack_require__(3);
@@ -14793,7 +14404,7 @@ module.exports = SolidityTypeUReal;
 
 
 /***/ }),
-/* 91 */
+/* 83 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -14809,13 +14420,13 @@ if (typeof XMLHttpRequest === 'undefined') {
 
 
 /***/ }),
-/* 92 */
+/* 84 */
 /***/ (function(module, exports) {
 
 module.exports = {"version":"0.18.4"}
 
 /***/ }),
-/* 93 */
+/* 85 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /*
@@ -14845,23 +14456,23 @@ module.exports = {"version":"0.18.4"}
  * @date 2014
  */
 
-var RequestManager = __webpack_require__(108);
+var RequestManager = __webpack_require__(100);
 var Iban = __webpack_require__(17);
-var Eth = __webpack_require__(102);
-var DB = __webpack_require__(101);
-var Shh = __webpack_require__(105);
-var Net = __webpack_require__(103);
-var Personal = __webpack_require__(104);
-var Swarm = __webpack_require__(106);
-var Settings = __webpack_require__(109);
-var version = __webpack_require__(92);
+var Eth = __webpack_require__(94);
+var DB = __webpack_require__(93);
+var Shh = __webpack_require__(97);
+var Net = __webpack_require__(95);
+var Personal = __webpack_require__(96);
+var Swarm = __webpack_require__(98);
+var Settings = __webpack_require__(101);
+var version = __webpack_require__(84);
 var utils = __webpack_require__(2);
 var sha3 = __webpack_require__(12);
-var extend = __webpack_require__(97);
-var Batch = __webpack_require__(95);
+var extend = __webpack_require__(89);
+var Batch = __webpack_require__(87);
 var Property = __webpack_require__(11);
-var HttpProvider = __webpack_require__(99);
-var IpcProvider = __webpack_require__(100);
+var HttpProvider = __webpack_require__(91);
+var IpcProvider = __webpack_require__(92);
 var BigNumber = __webpack_require__(7);
 
 
@@ -14971,7 +14582,7 @@ module.exports = Web3;
 
 
 /***/ }),
-/* 94 */
+/* 86 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /*
@@ -15065,7 +14676,7 @@ module.exports = AllSolidityEvents;
 
 
 /***/ }),
-/* 95 */
+/* 87 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /*
@@ -15137,7 +14748,7 @@ module.exports = Batch;
 
 
 /***/ }),
-/* 96 */
+/* 88 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /*
@@ -15165,8 +14776,8 @@ module.exports = Batch;
 var utils = __webpack_require__(2);
 var coder = __webpack_require__(21);
 var SolidityEvent = __webpack_require__(26);
-var SolidityFunction = __webpack_require__(98);
-var AllEvents = __webpack_require__(94);
+var SolidityFunction = __webpack_require__(90);
+var AllEvents = __webpack_require__(86);
 
 /**
  * Should be called to encode constructor params
@@ -15453,7 +15064,7 @@ module.exports = ContractFactory;
 
 
 /***/ }),
-/* 97 */
+/* 89 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var formatters = __webpack_require__(5);
@@ -15507,7 +15118,7 @@ module.exports = extend;
 
 
 /***/ }),
-/* 98 */
+/* 90 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /*
@@ -15775,7 +15386,7 @@ module.exports = SolidityFunction;
 
 
 /***/ }),
-/* 99 */
+/* 91 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /*
@@ -15812,10 +15423,10 @@ if (typeof window !== 'undefined' && window.XMLHttpRequest) {
     XMLHttpRequest = window.XMLHttpRequest; // jshint ignore: line
 // node
 } else {
-    XMLHttpRequest = __webpack_require__(91).XMLHttpRequest; // jshint ignore: line
+    XMLHttpRequest = __webpack_require__(83).XMLHttpRequest; // jshint ignore: line
 }
 
-var XHR2 = __webpack_require__(114); // jshint ignore: line
+var XHR2 = __webpack_require__(106); // jshint ignore: line
 
 /**
  * HttpProvider should be used to send rpc calls over http
@@ -15934,7 +15545,7 @@ module.exports = HttpProvider;
 
 
 /***/ }),
-/* 100 */
+/* 92 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -16148,7 +15759,7 @@ module.exports = IpcProvider;
 
 
 /***/ }),
-/* 101 */
+/* 93 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /*
@@ -16220,7 +15831,7 @@ module.exports = DB;
 
 
 /***/ }),
-/* 102 */
+/* 94 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -16254,13 +15865,13 @@ var utils = __webpack_require__(2);
 var Method = __webpack_require__(6);
 var Property = __webpack_require__(11);
 var c = __webpack_require__(15);
-var Contract = __webpack_require__(96);
+var Contract = __webpack_require__(88);
 var watches = __webpack_require__(18);
 var Filter = __webpack_require__(16);
-var IsSyncing = __webpack_require__(110);
-var namereg = __webpack_require__(107);
+var IsSyncing = __webpack_require__(102);
+var namereg = __webpack_require__(99);
 var Iban = __webpack_require__(17);
-var transfer = __webpack_require__(111);
+var transfer = __webpack_require__(103);
 
 var blockCall = function (args) {
     return (utils.isString(args[0]) && args[0].indexOf('0x') === 0) ? "eth_getBlockByHash" : "eth_getBlockByNumber";
@@ -16581,7 +16192,7 @@ module.exports = Eth;
 
 
 /***/ }),
-/* 103 */
+/* 95 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /*
@@ -16639,7 +16250,7 @@ module.exports = Net;
 
 
 /***/ }),
-/* 104 */
+/* 96 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -16739,7 +16350,7 @@ module.exports = Personal;
 
 
 /***/ }),
-/* 105 */
+/* 97 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /*
@@ -16831,7 +16442,7 @@ module.exports = Shh;
 
 
 /***/ }),
-/* 106 */
+/* 98 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -16983,7 +16594,7 @@ module.exports = Swarm;
 
 
 /***/ }),
-/* 107 */
+/* 99 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /*
@@ -17008,8 +16619,8 @@ module.exports = Swarm;
  * @date 2015
  */
 
-var globalRegistrarAbi = __webpack_require__(79);
-var icapRegistrarAbi= __webpack_require__(80);
+var globalRegistrarAbi = __webpack_require__(71);
+var icapRegistrarAbi= __webpack_require__(72);
 
 var globalNameregAddress = '0xc6d9d2cd449a754c494264e1809c50e34d64562b';
 var icapNameregAddress = '0xa1a111bc074c9cfa781f0c38e63bd51c91b8af00';
@@ -17028,7 +16639,7 @@ module.exports = {
 
 
 /***/ }),
-/* 108 */
+/* 100 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /*
@@ -17299,7 +16910,7 @@ module.exports = RequestManager;
 
 
 /***/ }),
-/* 109 */
+/* 101 */
 /***/ (function(module, exports) {
 
 
@@ -17314,7 +16925,7 @@ module.exports = Settings;
 
 
 /***/ }),
-/* 110 */
+/* 102 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /*
@@ -17413,7 +17024,7 @@ module.exports = IsSyncing;
 
 
 /***/ }),
-/* 111 */
+/* 103 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /*
@@ -17439,7 +17050,7 @@ module.exports = IsSyncing;
  */
 
 var Iban = __webpack_require__(17);
-var exchangeAbi = __webpack_require__(81);
+var exchangeAbi = __webpack_require__(73);
 
 /**
  * Should be used to make Iban transfer
@@ -17511,7 +17122,7 @@ module.exports = transfer;
 
 
 /***/ }),
-/* 112 */
+/* 104 */
 /***/ (function(module, exports) {
 
 var g;
@@ -17538,7 +17149,7 @@ module.exports = g;
 
 
 /***/ }),
-/* 113 */
+/* 105 */
 /***/ (function(module, exports) {
 
 module.exports = function(module) {
@@ -17566,7 +17177,7 @@ module.exports = function(module) {
 
 
 /***/ }),
-/* 114 */
+/* 106 */
 /***/ (function(module, exports) {
 
 module.exports = XMLHttpRequest;

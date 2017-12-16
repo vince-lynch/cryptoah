@@ -2,32 +2,20 @@ window.BigNumber = require('bignumber.js');
 import { default as Web3} from 'web3';
 
 var cryptoah = require('../../build/contracts/Cryptoah.json');
-var Cryptoah = web3.eth.contract(cryptoah.abi);
 
+if (typeof web3 !== 'undefined') {
+  console.warn("Using web3 detected from external source like Metamask - connected to blockchain")
+  // Use Mist/MetaMask's provider
+  window.web3 = new Web3(web3.currentProvider);
+} else {
+  console.warn('using INFURA API - connected to blockchain');
+  window.web3 = new Web3(new Web3.providers.HttpProvider("https://mainnet.infura.io/X3DitjB079q7GsMCtanI"));
+}
+var Cryptoah = web3.eth.contract(cryptoah.abi);
 window.contractAddress = '0x1d29035eacc4a8bf72a9d776aa9e546cdd7dd946';
 window.contractInstance = Cryptoah.at(window.contractAddress);
 
-//console.log('window.contractInstance.name.call();', window.contractInstance.name.call());
 
-
-contractInstance.symbol.call(function(error, result){
- if(!error)
-     console.log(result)
- else
-     console.error(error);
-});
-
-
-
-// CONTROLLERS
-import dashboardCtrl from './controllers/dashboard.js';
-import hoverbarController from './controllers/hoverbar.js';
-import assetsCtrl from './controllers/assets.js';
-import homepageController from './controllers/homepage.js';
-import TransactionsCtrl from  './controllers/transactions.js';
-import walletCtrl from  './controllers/wallet.js';
-import testPaymentCtrl from  './controllers/testPaymentCtrl.js';
-import accessViaEmailController from './controllers/findWalletbyId';
 
 
 // COMPONENTS
@@ -56,16 +44,6 @@ import pieChart from './services/pieChart.directive';
 import injectCSS from './services/cssFactory';
 
 var app = angular.module("myApp", ['ngRoute', 'angularMoment', 'ngAnimate', 'ngOdometer']);
-app.controller('dashboardCtrl', dashboardCtrl)
-  app.controller('hoverbarController', hoverbarController)
-  app.controller('assetsCtrl', assetsCtrl)
-  app.controller('homepageController', homepageController)
-  app.controller('TransactionsCtrl', TransactionsCtrl)
-  app.controller('walletCtrl', walletCtrl)
-  app.controller('testPaymentCtrl', testPaymentCtrl)
-  app.controller('accessViaEmailController', accessViaEmailController)
-
-
   app.service('BalanceService', BalanceService)
   app.service('BasicService', BasicService)
   app.factory('injectCSS', injectCSS)
