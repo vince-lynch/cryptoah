@@ -39,10 +39,18 @@ import fund from './components/fund.js';
 import lander from './components/lander.js';
 import landerHeader from './components/lander-header.js';
 import landerWaves from './components/lander-waves.js';
+import shareOfPie from './components/shareOfPie.component';
+import depositAddress from './components/depositAddress.component';
+import signupModal from './components/signupModal.component';
 
 // SERVICES
 import BasicService from './services/basicService';
 import BalanceService from './services/balancesService';
+import highStock from './services/highStock.factory';
+
+// Directives
+import pieChart from './services/pieChart.directive';
+
 
 //FACTORIES
 import injectCSS from './services/cssFactory';
@@ -61,6 +69,9 @@ app.controller('dashboardCtrl', dashboardCtrl)
   app.service('BalanceService', BalanceService)
   app.service('BasicService', BasicService)
   app.factory('injectCSS', injectCSS)
+  app.factory('highstock', highStock)
+  app.directive('pieChart', pieChart)
+
 
   app.component('headerNav', headerNav)
   app.component('ourLogo', ourLogo)
@@ -69,8 +80,12 @@ app.controller('dashboardCtrl', dashboardCtrl)
   app.component('team', team)
   app.component('fund', fund)
   app.component('lander', lander)
+  app.component('signupModal', signupModal)
   app.component('landerHeader', landerHeader)
   app.component('landerWaves', landerWaves)
+  app.component('shareOfPie', shareOfPie)
+  app.component('depositAddress', depositAddress)
+
 
   app.config(function($routeProvider, $locationProvider) {
       $locationProvider.html5Mode(false);
@@ -90,13 +105,13 @@ app.controller('dashboardCtrl', dashboardCtrl)
         })
         .when('/team', {
           template: `
-            <header-nav></header-nav>
+            <lander-header></lander-header>
             <team></team>
           `
         })
         .when('/fund', {
           template: `
-            <header-nav></header-nav>
+            <lander-header></lander-header>
             <fund></fund>
           `
         })      

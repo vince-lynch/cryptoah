@@ -6,53 +6,6 @@ const lander = {
 		$scope.totalSupply = 1000;
 		$scope.connectedToEth = true;
 
-		$scope.getTokenBalanceForAddress = function(address, totalSupply) {
-			$http({method: 'GET', url: 'https://api.etherscan.io/api?module=account&action=tokenbalance&contractaddress=0x1d29035eacc4a8bf72a9d776aa9e546cdd7dd946&address=' + address + '&tag=latest&apikey=DRDH19DFJ5G2S1GUZGYHJUQY39NQFBVIQJ'})
-			.then(function successCallback(response) {
-
-				console.log('found balance', response);
-
-				var theirTokenBalance = new BigNumber(response.data.result).toFixed(2);
-
-				var percentageOfTotalSupply = (theirTokenBalance / totalSupply) * 100;
-
-				console.log('address: ', address, "has: ", theirTokenBalance ," CAH tokens", percentageOfTotalSupply,"% of totalSupply");
-
-			}, function errorCallback(response) {
-				console.log('error in getting transfer events', response);
-			});
-		}
-
-
-		$scope.calculateTokenHolders = function(totalSupply) {
-			$http({method: 'GET', url:"https://api.etherscan.io/api?module=logs&action=getLogs&fromBlock=379224&toBlock=latest&address=0x1d29035eacc4a8bf72a9d776aa9e546cdd7dd946&apikey=DRDH19DFJ5G2S1GUZGYHJUQY39NQFBVIQJ"})
-			.then(function successCallback(response) {
-
-				var results = response.data.result;
-
-				console.log('response - tokenHolders', results)
-
-				results.forEach(function(result) {
-					$scope.getTokenBalanceForAddress(result.topics[2], totalSupply);
-				});
-
-			}, function errorCallback(response) {
-				console.log('error in getting transfer events', response);
-			});
-		}
-
-		var getTotalSupply = function() {
-			$http({method: 'GET', url:"https://api.etherscan.io/api?module=stats&action=tokensupply&contractaddress=0x1d29035eacc4a8bf72a9d776aa9e546cdd7dd946&apikey=DRDH19DFJ5G2S1GUZGYHJUQY39NQFBVIQJ"})
-			.then(function successCallback(response) {
-				console.log('getTotalSupply', response)
-				var totalSupply = response.data.result;
-				$scope.calculateTokenHolders(totalSupply);
-			})
-		}
-		getTotalSupply();
-
-
-
 
 		$scope.getTotalUSDRaised = function(totalSold){
 			$http({method: 'GET',url: 'https://api.etherscan.io/api?module=stats&action=ethprice&apikey=DRDH19DFJ5G2S1GUZGYHJUQY39NQFBVIQJ'}).then(function successCallback(response) {
@@ -102,16 +55,8 @@ const lander = {
 			} else
 			console.error(error);
 		});
-		contractInstance._totalSold.call(function(error, result){
-			if(!error) {
-				console.log('erc20 _totalSold is:',  new BigNumber(result).toFixed(2));
-				$scope.$apply(function(){
-					$scope.totalSold = Number(new BigNumber(result).toFixed(2));
-					$scope.getTotalUSDRaised($scope.totalSold);
-				})
-			} else
-			console.error(error);
-		});
+
+
 
 	}
 };
