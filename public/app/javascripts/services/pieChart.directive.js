@@ -53,9 +53,9 @@ export default class BasicService {
                 var point = this.point;
                 return `\n
                     <section class="donut-chart-tooltip">\n
-                    <i style="background-color:' + point.color + '">
-                    <span class="point-percentage">' + (point.y.toFixed(2) + '%') + '</span></i>\n
-                    <span class="point-name" style="color:' + point.color + '">' + point.name + '</span>\n 
+                    <i style="background-color: ${point.color}">
+                    <span class="point-percentage">${point.y.toFixed(2) + '%'}</span></i>\n
+                    <span class="point-name" style="color: ${point.color}"> ${point.name}</span>\n 
                     </section>\n
                 `;
             }
