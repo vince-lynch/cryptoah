@@ -27,10 +27,12 @@ import fund from './components/fund.js';
 import lander from './components/lander.js';
 import landerHeader from './components/lander-header.js';
 import landerWaves from './components/lander-waves.js';
+import sidebarDashboard from './components/sidebar-dashboard';
 import shareOfPie from './components/shareOfPie.component';
 import depositAddress from './components/depositAddress.component';
 import signupModal from './components/signupModal.component';
 import movingCube from './components/movingCube';
+
 
 // SERVICES
 import BasicService from './services/basicService';
@@ -60,6 +62,7 @@ var app = angular.module("myApp", ['ngRoute', 'angularMoment', 'ngAnimate', 'ngO
   app.component('shareOfPie', shareOfPie)
   app.component('depositAddress', depositAddress)
   app.component('movingCube', movingCube)
+  app.component('sidebarDashboard', sidebarDashboard)
 
 
   app.config(function($routeProvider, $locationProvider) {

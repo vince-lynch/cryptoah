@@ -1,0 +1,29 @@
+<div class="dropdown-menu sidebar-dashboard col-sm-12 col-lg-4 col-md-4" aria-labelledby="dropdownMenuButton">
+    
+    <div class="card dashboard-card wallet-card" ng-class="{ 'wallet-card-locked': walletAddress === undefined}">
+      <div class="disabled-lock" ng-hide="walletAddress">
+        <span>Your are connected to MetaMask but your Wallet is locked</span>
+      </div>
+      <div class="card-block">
+        <div class="row">
+          <div class="col-lg-12 col-sm-12">
+            <em class="wallet-address">{{ walletAddress }}</em>
+          </div>
+          <div class="col-lg-2 col-sm-2">
+            <img src="img/wallet.svg" class='wallet-icon'>
+          </div>
+          <div class="col-lg-10 col-sm-10">
+            <div class="row">
+              <div class="col-lg-6 col-sm-12"><span>CAH$</span><span>{{ myTokenBalance }}</span></div>
+              <div class="col-lg-6 col-sm-12"><span>Ether</span><span>{{ etherBalance }}</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <a class="dropdown-item" href="#">Another action</a>
+    <a class="dropdown-item" href="#">Something else here</a>
+    <a class="dropdown-item" data-toggle="modal" data-target="#exampleModal">Attach account</a>
+   
+</div>
