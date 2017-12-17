@@ -9,9 +9,37 @@
                 <li class="nav-item"><a href="#!/team" class="nav-link link-scroll">Team</a></li>
                 <li class="nav-item"><a href="#!/fund" class="nav-link">The fund</a></li>
             </ul>
-            <div class="navbar-text">
-                <!-- Button trigger modal--><a href="#!/fund" data-toggle="modal" data-target="#exampleModal" class="btn btn-primary navbar-btn btn-shadow btn-gradient">Sign Up</a>
+            <div class="connected-dropdown dropdown">
+              <button ng-if="connectionType == 'metamask'" 
+                      class="btn btn-primary navbar-btn btn-shadow btn-gradient dropdown-toggle"
+                      type="button" id="dropdownMenuButton"
+                      data-toggle="dropdown"
+                      aria-haspopup="true"
+                      aria-expanded="false">
+                    <img src="img/metamask.svg" class="meta-fox">
+                    <span>Connected</span>
+              </button>
+              <button ng-if="connectionType == 'etherscan'" 
+                      class="btn btn-primary navbar-btn btn-shadow btn-gradient dropdown-toggle"
+                      type="button" id="dropdownMenuButton"
+                      data-toggle="dropdown"
+                      aria-haspopup="true"
+                      aria-expanded="false">
+                    <img src="img/etherscan.png" class="etherscan-img">
+                    <span>Connected</span>
+              </button>
+              <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                <a class="dropdown-item" href="#">
+                    <span>via address:</span>
+                    <em>{{walletAddress}}</em>
+                </a>
+                <a class="dropdown-item" href="#">Another action</a>
+                <a class="dropdown-item" href="#">Something else here</a>
+                <a class="dropdown-item" data-toggle="modal" data-target="#exampleModal">Attach account</a>
+                 
+              </div>
             </div>
+
         </div>
     </nav>
 </header>

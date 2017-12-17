@@ -7,14 +7,30 @@ var lander = {
 		$scope.connectedToEth = true;
 
 
-		$scope.getTotalUSDRaised = function(totalSold){
-			$http({method: 'GET',url: 'https://api.etherscan.io/api?module=stats&action=ethprice&apikey=DRDH19DFJ5G2S1GUZGYHJUQY39NQFBVIQJ'}).then(function successCallback(response) {
-				console.log('price of ether', response.data.result.ethusd);
-				$scope.totalRaised = ((totalSold / 10) * response.data.result.ethusd).toFixed(2);
-				console.log('$scope.totalRaised', $scope.totalRaised);
-			}, function errorCallback(response) {
-				console.log('error in getting price of ether', response);
+		$scope.sectionInview = function(nameofSection){
+			console.log('nameofSection inview', nameofSection);
+		}
+
+
+		$scope.deposit = function(){
+			contractInstance.deposit({from: web3.eth.accounts[0], gas: 3000000, value: 100}, function(err, res){
+				// write code to wait for transaction to be mined to notify user
 			});
+		}
+
+
+		$scope.getTotalUSDS = function(inputTokens){
+			return new Promise((resolve, reject) =>{
+
+				$http({method: 'GET',url: 'https://api.etherscan.io/api?module=stats&action=ethprice&apikey=DRDH19DFJ5G2S1GUZGYHJUQY39NQFBVIQJ'}).then(function successCallback(response) {
+					var result = ((inputTokens / 1000000000000000000) * response.data.result.ethusd).toFixed(2);
+					resolve(result);
+				}, function errorCallback(response) {
+					console.log('error in getting price of ether', response);
+					reject(response);
+				});
+
+			})
 		}
 
 		console.log('reachingHere Twice (mortgage.js)');
@@ -41,7 +57,11 @@ var lander = {
 			if(!error) {
 				console.log('erc20 totalSupply is:', new BigNumber(result).toFixed(2));
 				$scope.$apply(function(){
-					$scope.totalSupply = Number(new BigNumber(result).toFixed(2));
+					$scope.totalSupply = new BigNumber(result).toFixed(2);
+					$scope.getTotalUSDS($scope.totalSupply).then((valuation) =>{
+						$scope.USDValuationOfTotalTokens =  new BigNumber(valuation).toFixed(2);
+						console.log('$scope.USDValuationOfTotalTokens', $scope.USDValuationOfTotalTokens);
+					});
 				})
 			} else
 			console.error(error);
@@ -50,7 +70,7 @@ var lander = {
 			if(!error) {
 				console.log('erc20 _remainingSupply is:',  new BigNumber(result).toFixed(2));
 				$scope.$apply(function(){
-					$scope.remainingSupply = Number(new BigNumber(result).toFixed(2));
+					$scope.remainingSupply = new BigNumber(result).toFixed(2);
 				})
 			} else
 			console.error(error);

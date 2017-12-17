@@ -1,5 +1,6 @@
 window.BigNumber = require('bignumber.js');
 import { default as Web3} from 'web3';
+import angularInview from 'angular-inview';
 
 var cryptoah = require('../../build/contracts/Cryptoah.json');
 
@@ -7,9 +8,11 @@ if (typeof web3 !== 'undefined') {
   console.warn("Using web3 detected from external source like Metamask - connected to blockchain")
   // Use Mist/MetaMask's provider
   window.web3 = new Web3(web3.currentProvider);
+  window.connectionType = 'metamask';
 } else {
   console.warn('using INFURA API - connected to blockchain');
   window.web3 = new Web3(new Web3.providers.HttpProvider("https://mainnet.infura.io/X3DitjB079q7GsMCtanI"));
+  window.connectionType = 'etherscan';
 }
 var Cryptoah = web3.eth.contract(cryptoah.abi);
 window.contractAddress = '0x1d29035eacc4a8bf72a9d776aa9e546cdd7dd946';
@@ -18,7 +21,6 @@ window.contractInstance = Cryptoah.at(window.contractAddress);
 
 // COMPONENTS
 import ourLogo from './components/ourlogo.js';
-import headerNav from './components/header.js';
 import footerNav from './components/footer.js';
 import team from './components/team.js';
 import fund from './components/fund.js';
@@ -39,14 +41,13 @@ import highStock from './services/highStock.factory';
 import pieChart from './services/pieChart.directive';
 
 
-var app = angular.module("myApp", ['ngRoute', 'angularMoment', 'ngAnimate', 'ngOdometer']);
+var app = angular.module("myApp", ['ngRoute', 'angularMoment', 'ngAnimate', 'ngOdometer', 'angular-inview']);
   app.service('BalanceService', BalanceService)
   app.service('BasicService', BasicService)
   app.factory('highstock', highStock)
   app.directive('pieChart', pieChart)
 
 
-  app.component('headerNav', headerNav)
   app.component('ourLogo', ourLogo)
   app.component('footerNav', footerNav)
   

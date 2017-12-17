@@ -1,0 +1,66 @@
+#about-us {
+
+	.digital-valuation-holder{
+		font-size: 50px;
+
+		.odometer.odometer-auto-theme .odometer-digit .odometer-digit-inner, .odometer.odometer-theme-train-station .odometer-digit .odometer-digit-inner {
+		    left: 0.15em;
+		    top: 0.15em;
+		}
+
+		.odometer.odometer-auto-theme .odometer-digit, #about-us .digital-valuation-holder .odometer.odometer-theme-train-station .odometer-digit {
+	    display: inline-block;
+	    vertical-align: middle;
+	    -moz-border-radius: 0.1em;
+	    -webkit-border-radius: 0.1em;
+	    border-radius: 0.1em;
+	    background-image: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiP…dpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9InVybCgjZ3JhZCkiIC8+PC9zdmc+IA==);
+	    background-size: 100%;
+	    background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #111111), color-stop(35%, #111111), color-stop(55%, #333333), color-stop(55%, #111111), color-stop(100%, #111111));
+	    background-image: -moz-linear-gradient(top, #111111 0%, #111111 35%, #333333 55%, #111111 55%, #111111 100%);
+	    background-image: -webkit-linear-gradient(top, #111111 0%, #111111 35%, #333333 55%, #111111 55%, #111111 100%);
+	    background-image: linear-gradient(to bottom, #111111 0%, #111111 35%, #333333 55%, #111111 55%, #111111 100%);
+	    background-color: #222;
+	    padding: 5px 0.15em;
+	    padding-top: 13px;
+	    color: #fff;
+	  }
+	  #about-us .digital-valuation-holder .odometer.odometer-auto-theme .odometer-digit .odometer-digit-inner, #about-us .digital-valuation-holder .odometer.odometer-theme-train-station .odometer-digit .odometer-digit-inner {
+	    text-align: center;
+	    display: block;
+	    position: absolute;
+	    top: 9px;
+	    left: 0;
+	    right: 0;
+	    bottom: 0;
+	    overflow: hidden;
+		}
+
+		.odometer.odometer-auto-theme .odometer-digit .odometer-value, .odometer.odometer-theme-train-station .odometer-digit .odometer-value {
+	    display: block;
+	    -webkit-transform: translateZ(0);
+	    margin-top: 4px;
+		}
+	}
+
+
+	h5, .h5 {
+	   font-size: 1.25rem;
+	   text-align: center;
+	   font-weight: 400;
+	}
+
+	h2, .h2 {
+	   font-size: 2.2rem;
+	   text-align: center;
+	}
+
+
+	p {
+	   margin: 0 auto;
+	   margin-top: 30px;
+	   margin-bottom: 30px;
+	   text-align: center;
+	}
+
+}

@@ -1,0 +1,8 @@
+header.header .connected-dropdown {
+  font-size: 12px;
+  font-weight: 500;
+  cursor: pointer; }
+  header.header .connected-dropdown img.meta-fox {
+    width: 25px; }
+  header.header .connected-dropdown img.etherscan-img {
+    width: 25px; }

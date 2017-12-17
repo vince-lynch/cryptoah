@@ -1,3 +1,4 @@
+@charset "UTF-8";
 #logo-box {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -290,6 +291,15 @@ pie-chart .portfolio-assets-legend .asset-details .percentage {
   right: 0;
   font-size: 1em; }
 
+header.header .connected-dropdown {
+  font-size: 12px;
+  font-weight: 500;
+  cursor: pointer; }
+  header.header .connected-dropdown img.meta-fox {
+    width: 25px; }
+  header.header .connected-dropdown img.etherscan-img {
+    width: 25px; }
+
 section.hero .CTA {
   margin-top: 40px;
   margin-bottom: 37px; }
@@ -297,7 +307,7 @@ section.hero .CTA {
 section#browser {
   padding: 150px 0;
   overflow: hidden;
-  background: #f3e5bd; }
+  background: rgba(255, 245, 216, 0.66); }
   section#browser .title {
     font-family: inherit;
     font-weight: 200;
@@ -305,6 +315,56 @@ section#browser {
     display: inline-block;
     color: #2e324a;
     background: white; }
+
+#about-us .digital-valuation-holder {
+  font-size: 50px; }
+  #about-us .digital-valuation-holder .odometer.odometer-auto-theme .odometer-digit .odometer-digit-inner, #about-us .digital-valuation-holder .odometer.odometer-theme-train-station .odometer-digit .odometer-digit-inner {
+    left: 0.15em;
+    top: 0.15em; }
+  #about-us .digital-valuation-holder .odometer.odometer-auto-theme .odometer-digit, #about-us .digital-valuation-holder #about-us .digital-valuation-holder .odometer.odometer-theme-train-station .odometer-digit {
+    display: inline-block;
+    vertical-align: middle;
+    -moz-border-radius: 0.1em;
+    -webkit-border-radius: 0.1em;
+    border-radius: 0.1em;
+    background-image: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiP…dpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9InVybCgjZ3JhZCkiIC8+PC9zdmc+IA==);
+    background-size: 100%;
+    background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #111111), color-stop(35%, #111111), color-stop(55%, #333333), color-stop(55%, #111111), color-stop(100%, #111111));
+    background-image: -moz-linear-gradient(top, #111111 0%, #111111 35%, #333333 55%, #111111 55%, #111111 100%);
+    background-image: -webkit-linear-gradient(top, #111111 0%, #111111 35%, #333333 55%, #111111 55%, #111111 100%);
+    background-image: linear-gradient(to bottom, #111111 0%, #111111 35%, #333333 55%, #111111 55%, #111111 100%);
+    background-color: #222;
+    padding: 5px 0.15em;
+    padding-top: 13px;
+    color: #fff; }
+  #about-us .digital-valuation-holder #about-us .digital-valuation-holder .odometer.odometer-auto-theme .odometer-digit .odometer-digit-inner, #about-us .digital-valuation-holder #about-us .digital-valuation-holder .odometer.odometer-theme-train-station .odometer-digit .odometer-digit-inner {
+    text-align: center;
+    display: block;
+    position: absolute;
+    top: 9px;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    overflow: hidden; }
+  #about-us .digital-valuation-holder .odometer.odometer-auto-theme .odometer-digit .odometer-value, #about-us .digital-valuation-holder .odometer.odometer-theme-train-station .odometer-digit .odometer-value {
+    display: block;
+    -webkit-transform: translateZ(0);
+    margin-top: 4px; }
+
+#about-us h5, #about-us .h5 {
+  font-size: 1.25rem;
+  text-align: center;
+  font-weight: 400; }
+
+#about-us h2, #about-us .h2 {
+  font-size: 2.2rem;
+  text-align: center; }
+
+#about-us p {
+  margin: 0 auto;
+  margin-top: 30px;
+  margin-bottom: 30px;
+  text-align: center; }
 
 .movingCube {
   perspective: 9000rem;

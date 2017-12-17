@@ -1,7 +1,7 @@
 section#browser {
   padding: 150px 0;
   overflow: hidden;
-  background: #f3e5bd; }
+  background: rgba(255, 245, 216, 0.66); }
   section#browser .title {
     font-family: inherit;
     font-weight: 200;
