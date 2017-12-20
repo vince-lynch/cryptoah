@@ -1,6 +1,9 @@
 window.BigNumber = require('bignumber.js');
+var Web3Accounts = require('web3-eth-accounts');
 import { default as Web3} from 'web3';
 import angularInview from 'angular-inview';
+
+window.Accounts = new Web3Accounts()
 
 var cryptoah = require('../../build/contracts/Cryptoah.json');
 
@@ -39,6 +42,7 @@ import BasicService from './services/basicService';
 import BalanceService from './services/balancesService';
 import highStock from './services/highStock.factory';
 import AuthService from './services/auth.service';
+import FirestoreService from './services/firestore.service';
 
 // Directives
 import pieChart from './services/pieChart.directive';
@@ -48,6 +52,7 @@ var app = angular.module("myApp", ['ngRoute', 'angularMoment', 'ngAnimate', 'ngO
   app.service('BalanceService', BalanceService)
   app.service('BasicService', BasicService)
   app.service('AuthService', AuthService)
+  app.service('FirestoreService', FirestoreService)
   app.factory('highstock', highStock)
   app.directive('pieChart', pieChart)
 

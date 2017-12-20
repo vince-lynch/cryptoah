@@ -1,4 +1,4 @@
-var AuthService = function(){
+var AuthService = function(FirestoreService){
 
   console.log('authService loaded');
 
@@ -6,6 +6,14 @@ var AuthService = function(){
   if(firebase.auth().currentUser) {
     console.log('logged in', firebase.auth().currentUser);
     this.loggedIn = firebase.auth().currentUser;
+
+    const userInfo = {
+      displayName: this.loggedIn.displayName,
+      phoneNumber: this.loggedIn.phoneNumber,
+      photoUrl: this.loggedIn.photoURL
+    }
+    // get associated data of the users wallet from the DB
+    FirestoreService.getUserWallet(this.loggedIn.uid, userInfo);
   }
 
   this.signinViaGoogle = function() {
