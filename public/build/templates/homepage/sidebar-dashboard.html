@@ -22,8 +22,6 @@
       </div>
     </div>
 
-    <a class="dropdown-item" href="#">Another action</a>
-    <a class="dropdown-item" href="#">Something else here</a>
-    <a class="dropdown-item" data-toggle="modal" data-target="#exampleModal">Attach account</a>
-   
+    <a class="dropdown-item" ng-click="signinViaGoogle()" ng-hide="identityConnected">Signin Via Google</a>
+    <a class="dropdown-item" ng-click="signOut()" ng-show="identityConnected">Signout</a>
 </div>

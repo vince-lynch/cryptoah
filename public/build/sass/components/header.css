@@ -1,3 +1,7 @@
+header.header img.loggedin-avatar {
+  width: 50px;
+  border-radius: 100px; }
+
 header.header .connected-dropdown {
   font-size: 12px;
   font-weight: 500;

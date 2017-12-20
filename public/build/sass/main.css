@@ -291,6 +291,10 @@ pie-chart .portfolio-assets-legend .asset-details .percentage {
   right: 0;
   font-size: 1em; }
 
+header.header img.loggedin-avatar {
+  width: 50px;
+  border-radius: 100px; }
+
 header.header .connected-dropdown {
   font-size: 12px;
   font-weight: 500;

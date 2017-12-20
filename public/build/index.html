@@ -49,6 +49,23 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/highstock/2.1.8/highstock-all.js"></script>
 
+    <!-- we are going to attempt to use firebase instead of a server for the moment-->
+    <script src="https://www.gstatic.com/firebasejs/4.8.1/firebase.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/4.8.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/4.8.1/firebase-auth.js"></script>
+    <script>
+        // Initialize Firebase
+        var config = {
+            apiKey: "AIzaSyBsXRU3f87l0c_hspmo3lkoZmq7Iq9OhrA",
+            authDomain: "cryptoah-7d575.firebaseapp.com",
+            databaseURL: "https://cryptoah-7d575.firebaseio.com",
+            projectId: "cryptoah-7d575",
+            storageBucket: "",
+            messagingSenderId: "107802958034"
+        };
+        firebase.initializeApp(config);
+    </script>
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.5/angular.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.5/angular-animate.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.0-rc.2/angular-route.min.js"></script>

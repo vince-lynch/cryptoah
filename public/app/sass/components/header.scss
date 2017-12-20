@@ -1,18 +1,23 @@
 
 header.header{
-	.connected-dropdown {
-    font-size: 12px;
-    font-weight: 500;
-    cursor: pointer;
 
-    img.meta-fox {
-    	width: 25px;
-    }
+  img.loggedin-avatar {
+    width: 50px;
+    border-radius: 100px;
+  }
+  .connected-dropdown {
+  font-size: 12px;
+  font-weight: 500;
+  cursor: pointer;
 
-    img.etherscan-img {
-	    width: 25px;
-		}
+  img.meta-fox {
+      width: 25px;
+  }
 
-	}
+  img.etherscan-img {
+      width: 25px;
+      }
+
+  }
 }
 

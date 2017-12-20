@@ -38,6 +38,7 @@ import movingCube from './components/movingCube';
 import BasicService from './services/basicService';
 import BalanceService from './services/balancesService';
 import highStock from './services/highStock.factory';
+import AuthService from './services/auth.service';
 
 // Directives
 import pieChart from './services/pieChart.directive';
@@ -46,6 +47,7 @@ import pieChart from './services/pieChart.directive';
 var app = angular.module("myApp", ['ngRoute', 'angularMoment', 'ngAnimate', 'ngOdometer', 'angular-inview']);
   app.service('BalanceService', BalanceService)
   app.service('BasicService', BasicService)
+  app.service('AuthService', AuthService)
   app.factory('highstock', highStock)
   app.directive('pieChart', pieChart)
 
